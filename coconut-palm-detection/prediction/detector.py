@@ -302,7 +302,8 @@ class CoconutPalmDetector:
     def process(self, aoi_folder, output_dir):
         """Run detection on every .jp2 / .tiff raster in aoi_folder."""
         os.makedirs(output_dir, exist_ok=True)
-        aoi_files = (glob.glob(os.path.join(aoi_folder, '*.jp2')) +
+        aoi_files = (glob.glob(os.path.join(aoi_folder, '*.jp2'))  +
+                     glob.glob(os.path.join(aoi_folder, '*.tif')) +
                      glob.glob(os.path.join(aoi_folder, '*.tiff')))
         pool_args = [(f, self, output_dir) for f in aoi_files]
         with Pool(processes=cpu_count()) as pool:

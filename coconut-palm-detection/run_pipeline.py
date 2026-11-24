@@ -28,7 +28,7 @@
 #
 # PHASE 2 — PREDICTION (INFERENCE)
 # ---------------------------------
-#   Input  : trained .ckpt  +  folder of satellite rasters (.jp2 / .tiff)
+#   Input  : trained .ckpt  +  folder of satellite rasters (.jp2 / .tif / .tiff)
 #   Steps  :
 #     1. Slide 512-px tiles (30% overlap) across each raster
 #     2. Run Faster R-CNN on each tile → (boxes, scores, labels)
@@ -94,13 +94,13 @@ DEVICES       = [0]      # GPU index; e.g. [1] for second GPU
 NUM_WORKERS   = 4
 
 # --- PHASE 2: Prediction — input paths ---------------------------------------
-CKPT_PATH     = '/path/to/checkpoints/best-checkpoint.ckpt'
+CKPT_PATH     = '/media/vassarml/HDD/Praneeth/Praneeth-Vassar/coconut-palm-detection/Weights/Coconut_Palm_Detection_Baseline_v1_512_V2.ckpt'
 #   Path to the trained checkpoint (output of Phase 1, or existing .ckpt)
 
-AOI_FOLDER    = '/path/to/aoi/satellite/rasters/'
-#   Folder of satellite rasters (.jp2 or .tiff) to run detection on
+AOI_FOLDER    = '/media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/Lakhimpur_Whole_Sat_Data/Lakhimpur/'
+#   Folder of satellite rasters (.jp2 / .tif / .tiff) to run detection on
 
-OUTPUT_DIR    = '/path/to/predictions/'
+OUTPUT_DIR    = '/media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/coconut-palm-tree-detection/'
 #   Detections saved here as shapefile/GeoJSON; clusters in OUTPUT_DIR/clusters/
 
 # --- PHASE 2: Prediction — detection settings --------------------------------
@@ -110,6 +110,12 @@ OVERLAP_RATIO    = 0.30   # 30 % overlap between tiles to avoid missing edge tre
 BOUNDARY_BUFFER  = 70     # px margin where edge detections are discarded per tile
 SAVE_FORMAT      = 'shp'  # 'shp' (shapefile)  or  'geojson'
 EXTRACT_CLUSTERS = True   # if True, also save plantation cluster polygons
+
+# --- GPU memory gating -------------------------------------------------------
+#   Before each phase the pipeline waits until at least this many MiB of GPU
+#   memory are free.  It checks every 20 s and NEVER kills any other process.
+TRAIN_GPU_REQUIRED_MIB   = 4000   # MiB needed free before training   (~4 GB)
+PREDICT_GPU_REQUIRED_MIB = 2000   # MiB needed free before prediction (~2 GB)
 
 # =============================================================================
 # ████████████  END OF CONFIGURATION — do not edit below  ████████████████████
@@ -121,7 +127,8 @@ import sys
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# Add both subfolders to sys.path so their modules can import each other
+# Add project root + subfolders to sys.path
+sys.path.insert(0, BASE_DIR)
 sys.path.insert(0, os.path.join(BASE_DIR, 'training'))
 sys.path.insert(0, os.path.join(BASE_DIR, 'prediction'))
 
@@ -147,9 +154,11 @@ def run_training():
     print(f'  Checkpoints: {CHECKPOINT_DIR}')
     print(f'  Classes    : {NUM_CLASSES}  (0=bg, 1=palm, 2=coconut)')
     print(f'  Epochs     : {MAX_EPOCHS}   Batch: {BATCH_SIZE}   LR: {LR}')
+    print(f'  GPU device : {DEVICES}   Required free: {TRAIN_GPU_REQUIRED_MIB:,} MiB')
     print('='*60 + '\n')
 
-    # Imports are inside the function so skipping training doesn't load Lightning
+    # Imports inside function so skipping training doesn't load Lightning
+    from gpu_utils  import print_gpu_stats, wait_for_gpu_memory
     from config     import DetectionParams
     from datamodule import DetectionDataModule
     from model      import DetectionLitModule
@@ -225,10 +234,13 @@ def run_training():
         optimizer=cfg.optimizer,
     )
 
-    # 6. Train
+    # 6. Wait for GPU memory, then train
+    print_gpu_stats(DEVICES[0], label=f'GPU {DEVICES[0]} before training')
+    wait_for_gpu_memory(TRAIN_GPU_REQUIRED_MIB, device_idx=DEVICES[0], label='training')
     print('Starting training …')
     trainer.fit(task, datamodule)
     print(f'\nTraining complete. Checkpoint saved to: {CHECKPOINT_DIR}')
+    print_gpu_stats(DEVICES[0], label=f'GPU {DEVICES[0]} after training')
 
 
 # ===========================================================================
@@ -251,10 +263,12 @@ def run_prediction():
     print(f'  AOI folder : {AOI_FOLDER}')
     print(f'  Output     : {OUTPUT_DIR}')
     print(f'  Score thr  : {SCORE_THRESH}   Tile: {TILE_SIZE}px   Format: {SAVE_FORMAT}')
+    print(f'  GPU device : {DEVICES}   Required free: {PREDICT_GPU_REQUIRED_MIB:,} MiB')
     print('='*60 + '\n')
 
     # Import kept inside function so skipping prediction doesn't load rasterio etc.
-    from detector import CoconutPalmDetector
+    from gpu_utils import print_gpu_stats, wait_for_gpu_memory
+    from detector  import CoconutPalmDetector
 
     # 1. Build detector
     #    _load_model() — loads checkpoint (Lightning .ckpt or plain state dict),
@@ -270,9 +284,11 @@ def run_prediction():
         extract_clusters=EXTRACT_CLUSTERS,
     )
 
-    # 2. Run detection on every .jp2 / .tiff raster in AOI_FOLDER
+    # 2. Wait for GPU memory, then run detection on every raster in AOI_FOLDER
     #    Uses multiprocessing (one process per raster)
     #    Rasters whose output file already exists are skipped (safe to resume)
+    print_gpu_stats(DEVICES[0], label=f'GPU {DEVICES[0]} before prediction')
+    wait_for_gpu_memory(PREDICT_GPU_REQUIRED_MIB, device_idx=DEVICES[0], label='prediction')
     print('Running prediction …')
     detector.process(AOI_FOLDER, OUTPUT_DIR)
 
@@ -280,6 +296,7 @@ def run_prediction():
     print(f'  Detections → {OUTPUT_DIR}')
     if EXTRACT_CLUSTERS:
         print(f'  Clusters   → {os.path.join(OUTPUT_DIR, "clusters/")}')
+    print_gpu_stats(DEVICES[0], label=f'GPU {DEVICES[0]} after prediction')
 
 
 # ===========================================================================
@@ -315,6 +332,25 @@ if __name__ == '__main__':
     if args.mode == 'both':
         ckpt_path_to_use = os.path.join(CHECKPOINT_DIR, 'best-checkpoint.ckpt')
 
+    # -----------------------------------------------------------------------
+    # PRE-FLIGHT CHECKS — run once before any heavy work starts.
+    # Verifies imports, paths, GPU memory, disk space, CSV headers, etc.
+    # If anything fails, the pipeline exits cleanly here.
+    # -----------------------------------------------------------------------
+    from preflight import run_preflight
+
+    _cfg = dict(
+        TRAIN_IMAGE_DIR=TRAIN_IMAGE_DIR, TRAIN_CSV_FILE=TRAIN_CSV_FILE,
+        CHECKPOINT_DIR=CHECKPOINT_DIR,
+        CKPT_PATH=ckpt_path_to_use,
+        AOI_FOLDER=AOI_FOLDER, OUTPUT_DIR=OUTPUT_DIR,
+        DEVICES=DEVICES,
+        TRAIN_GPU_REQUIRED_MIB=TRAIN_GPU_REQUIRED_MIB,
+        PREDICT_GPU_REQUIRED_MIB=PREDICT_GPU_REQUIRED_MIB,
+    )
+    if not run_preflight(args.mode, _cfg):
+        sys.exit(1)
+
     # Validate that placeholder paths have been replaced
     checks = []
     if RUN_TRAINING:
@@ -328,7 +364,6 @@ if __name__ == '__main__':
             ('AOI_FOLDER', AOI_FOLDER),
             ('OUTPUT_DIR', OUTPUT_DIR),
         ]
-        # Only validate CKPT_PATH when the user must supply it manually
         if args.mode == 'predict':
             checks.append(('CKPT_PATH', CKPT_PATH))
     for name, val in checks:
@@ -345,7 +380,6 @@ if __name__ == '__main__':
         if args.mode == 'both' and not os.path.exists(ckpt_path_to_use):
             print(f'ERROR: Expected checkpoint not found after training: {ckpt_path_to_use}')
             sys.exit(1)
-        # Temporarily override the global so run_prediction() picks it up
         CKPT_PATH = ckpt_path_to_use
         run_prediction()
 
