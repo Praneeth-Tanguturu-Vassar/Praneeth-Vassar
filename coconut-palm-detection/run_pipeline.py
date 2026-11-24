@@ -114,8 +114,11 @@ EXTRACT_CLUSTERS = True   # if True, also save plantation cluster polygons
 # --- GPU memory gating -------------------------------------------------------
 #   Before each phase the pipeline waits until at least this many MiB of GPU
 #   memory are free.  It checks every 20 s and NEVER kills any other process.
-TRAIN_GPU_REQUIRED_MIB   = 4000   # MiB needed free before training   (~4 GB)
-PREDICT_GPU_REQUIRED_MIB = 2000   # MiB needed free before prediction (~2 GB)
+#   Tuned for RTX A4000 (16 GB total = 16,376 MiB).
+#   These are MINIMUM FREE thresholds — PyTorch uses what it needs automatically.
+#   Pipeline waits (every 20 s) if free memory is below these values.
+TRAIN_GPU_REQUIRED_MIB   = 8000   # wait if < 8 GB free before training   (Faster R-CNN batch=8 needs ~6–8 GB)
+PREDICT_GPU_REQUIRED_MIB = 3000   # wait if < 3 GB free before prediction (inference needs ~2 GB)
 
 # =============================================================================
 # ████████████  END OF CONFIGURATION — do not edit below  ████████████████████

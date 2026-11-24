@@ -305,6 +305,8 @@ class CoconutPalmDetector:
         aoi_files = (glob.glob(os.path.join(aoi_folder, '*.jp2'))  +
                      glob.glob(os.path.join(aoi_folder, '*.tif')) +
                      glob.glob(os.path.join(aoi_folder, '*.tiff')))
-        pool_args = [(f, self, output_dir) for f in aoi_files]
-        with Pool(processes=cpu_count()) as pool:
-            pool.map(process_single_aoi, pool_args)
+        # Run sequentially — no Pool needed for GPU inference.
+        # Pool(processes=N) spawns N processes each loading the model on GPU,
+        # filling all VRAM even with N=1 (spawn overhead + extra CUDA contexts).
+        for f in aoi_files:
+            process_single_aoi((f, self, output_dir))
