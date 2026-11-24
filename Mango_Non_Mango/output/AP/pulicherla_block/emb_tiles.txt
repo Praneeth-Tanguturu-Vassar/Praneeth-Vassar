@@ -1,0 +1,17 @@
+/home/vassarlabs/Downloads/AP/Blocks/pulicherla/gl_data/pulicherla_block_embeddings/tx+01716_ty+00294.tif
+/home/vassarlabs/Downloads/AP/Blocks/pulicherla/gl_data/pulicherla_block_embeddings/tx+01716_ty+00295.tif
+/home/vassarlabs/Downloads/AP/Blocks/pulicherla/gl_data/pulicherla_block_embeddings/tx+01716_ty+00296.tif
+/home/vassarlabs/Downloads/AP/Blocks/pulicherla/gl_data/pulicherla_block_embeddings/tx+01717_ty+00294.tif
+/home/vassarlabs/Downloads/AP/Blocks/pulicherla/gl_data/pulicherla_block_embeddings/tx+01717_ty+00295.tif
+/home/vassarlabs/Downloads/AP/Blocks/pulicherla/gl_data/pulicherla_block_embeddings/tx+01717_ty+00296.tif
+/home/vassarlabs/Downloads/AP/Blocks/pulicherla/gl_data/pulicherla_block_embeddings/tx+01718_ty+00294.tif
+/home/vassarlabs/Downloads/AP/Blocks/pulicherla/gl_data/pulicherla_block_embeddings/tx+01718_ty+00295.tif
+/home/vassarlabs/Downloads/AP/Blocks/pulicherla/gl_data/pulicherla_block_embeddings/tx+01718_ty+00296.tif
+/home/vassarlabs/Downloads/AP/Blocks/pulicherla/gl_data/pulicherla_block_embeddings/tx+01719_ty+00293.tif
+/home/vassarlabs/Downloads/AP/Blocks/pulicherla/gl_data/pulicherla_block_embeddings/tx+01719_ty+00294.tif
+/home/vassarlabs/Downloads/AP/Blocks/pulicherla/gl_data/pulicherla_block_embeddings/tx+01719_ty+00295.tif
+/home/vassarlabs/Downloads/AP/Blocks/pulicherla/gl_data/pulicherla_block_embeddings/tx+01720_ty+00293.tif
+/home/vassarlabs/Downloads/AP/Blocks/pulicherla/gl_data/pulicherla_block_embeddings/tx+01720_ty+00294.tif
+/home/vassarlabs/Downloads/AP/Blocks/pulicherla/gl_data/pulicherla_block_embeddings/tx+01720_ty+00295.tif
+/home/vassarlabs/Downloads/AP/Blocks/pulicherla/gl_data/pulicherla_block_embeddings/tx+01721_ty+00294.tif
+/home/vassarlabs/Downloads/AP/Blocks/pulicherla/gl_data/pulicherla_block_embeddings/tx+01721_ty+00295.tif
