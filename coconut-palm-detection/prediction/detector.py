@@ -56,8 +56,9 @@ timer = Timer()
 def process_single_aoi(args):
     """Worker function: runs full detection pipeline on one raster file."""
     timer.start()
-    aoi_file, detector, output_dir = args
+    aoi_file, detector, output_dir, idx, total = args
     file_id = os.path.splitext(os.path.basename(aoi_file))[0]
+    print(f"\n[{idx}/{total}] Processing: {file_id}")
 
     out_vector          = os.path.join(output_dir, f"{file_id}_pred.{detector.save_format}")
     post_process_folder = os.path.join(output_dir, 'cleaned')
@@ -68,7 +69,7 @@ def process_single_aoi(args):
 
     # Skip if already processed (safe to resume interrupted runs)
     if os.path.exists(out_vector):
-        print(f"Skipping already processed: {file_id}")
+        print(f"  → Already done, skipping.")
         return
 
     all_detections = []
@@ -305,8 +306,10 @@ class CoconutPalmDetector:
         aoi_files = (glob.glob(os.path.join(aoi_folder, '*.jp2'))  +
                      glob.glob(os.path.join(aoi_folder, '*.tif')) +
                      glob.glob(os.path.join(aoi_folder, '*.tiff')))
+        total = len(aoi_files)
+        print(f"\nFound {total} raster(s) to process.\n")
         # Run sequentially — no Pool needed for GPU inference.
         # Pool(processes=N) spawns N processes each loading the model on GPU,
         # filling all VRAM even with N=1 (spawn overhead + extra CUDA contexts).
-        for f in aoi_files:
-            process_single_aoi((f, self, output_dir))
+        for idx, f in enumerate(aoi_files, start=1):
+            process_single_aoi((f, self, output_dir, idx, total))

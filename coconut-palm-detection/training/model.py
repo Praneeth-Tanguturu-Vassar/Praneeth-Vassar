@@ -47,7 +47,17 @@ class DetectionLitModule(ObjectDetectionTask):
             {'boxes': batch['boxes'][i], 'labels': batch['labels'][i]}
             for i in range(batch_size)
         ]
-        # In eval mode Faster R-CNN returns predictions (boxes, labels, scores)
+        # Compute val_loss: Faster R-CNN only returns losses in train mode,
+        # so temporarily switch to train mode (same pattern as segmentation modules)
+        self.model.train()
+        with torch.no_grad():
+            loss_dict = self.model(x, y)
+        val_loss = sum(loss_dict.values())
+        self.log('val_loss', val_loss, batch_size=batch_size,
+                 on_step=False, on_epoch=True, prog_bar=True)
+
+        # Compute MAP metrics in eval mode
+        self.model.eval()
         y_hat = self(x)
         metrics = self.val_metrics(y_hat, y)
         metrics.pop('val_classes', None)
