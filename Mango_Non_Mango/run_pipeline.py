@@ -21,13 +21,13 @@ Usage
 # =============================================================================
 
 # ---- Input paths ------------------------------------------------------------
-BBOXES_PATH = "/home/vassarlabs/Downloads/AP/Blocks/pulicherla/Tree_geojson/Tree.shp"
-RGB_PATH    = "/home/vassarlabs/Downloads/AP/Blocks/pulicherla/gl_data/Pulicherla_rgb"
-EMB_PATH    = "/home/vassarlabs/Downloads/AP/Blocks/pulicherla/gl_data/pulicherla_block_embeddings"
-GT_PATH     = "/home/vassarlabs/Documents/vs-code/GeoAI/Embeddings_RD/Mango_Non_Mango/Mango_NonMango.tif"
+BBOXES_PATH = "/media/vassarml/HDD/Praneeth/output/Tree_geojson/Tree.shp"
+RGB_PATH    = "/media/vassarml/HDD/Praneeth/output/Pulicherla_rgb"
+EMB_PATH    = "/media/vassarml/HDD/Praneeth/output/pulicherla_block_embeddings"
+GT_PATH     = "/media/vassarml/HDD/Praneeth/Praneeth-Vassar/Mango_Non_Mango/Mango_NonMango.tif"
 
 # ---- Output path ------------------------------------------------------------
-OUT_DIR     = "/home/vassarlabs/Documents/vs-code/GeoAI/Embeddings_RD/Mango_Non_Mango/output/AP/pulicherla_block"
+OUT_DIR     = "/media/vassarml/HDD/Praneeth/output/pulicherla_block_results"
 
 # ---- Feature selection ------------------------------------------------------
 FEATURE_SELECTION = True    # True = select important features | False = use all 131
