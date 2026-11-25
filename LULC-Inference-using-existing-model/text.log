@@ -1,0 +1,3019 @@
+nohup: ignoring input
+
+############################################################
+#  FLAIR-INC RGB Inference Pipeline
+#  Model : resnet34-UNet  |  19 classes  |  RGB input
+############################################################
+
+============================================================
+STEP 1 : Downloading model weights
+  URL   : https://huggingface.co/IGNF/FLAIR-INC_rgb_15cl_resnet34-unet/resolve/main/FLAIR-INC_rgb_15cl_resnet34-unet_weights.pth
+  Saving: flair_rgb_unet_weights.pth
+  Progress: 1.0 / 93.39595317840576 MB  Progress: 2.0 / 93.39595317840576 MB  Progress: 3.0 / 93.39595317840576 MB  Progress: 4.0 / 93.39595317840576 MB  Progress: 5.0 / 93.39595317840576 MB  Progress: 6.0 / 93.39595317840576 MB  Progress: 7.0 / 93.39595317840576 MB  Progress: 8.0 / 93.39595317840576 MB  Progress: 9.0 / 93.39595317840576 MB  Progress: 10.0 / 93.39595317840576 MB  Progress: 11.0 / 93.39595317840576 MB  Progress: 12.0 / 93.39595317840576 MB  Progress: 13.0 / 93.39595317840576 MB  Progress: 14.0 / 93.39595317840576 MB  Progress: 15.0 / 93.39595317840576 MB  Progress: 16.0 / 93.39595317840576 MB  Progress: 17.0 / 93.39595317840576 MB  Progress: 18.0 / 93.39595317840576 MB  Progress: 19.0 / 93.39595317840576 MB  Progress: 20.0 / 93.39595317840576 MB  Progress: 21.0 / 93.39595317840576 MB  Progress: 22.0 / 93.39595317840576 MB  Progress: 23.0 / 93.39595317840576 MB  Progress: 24.0 / 93.39595317840576 MB  Progress: 25.0 / 93.39595317840576 MB  Progress: 26.0 / 93.39595317840576 MB  Progress: 27.0 / 93.39595317840576 MB  Progress: 28.0 / 93.39595317840576 MB  Progress: 29.0 / 93.39595317840576 MB  Progress: 30.0 / 93.39595317840576 MB  Progress: 31.0 / 93.39595317840576 MB  Progress: 32.0 / 93.39595317840576 MB  Progress: 33.0 / 93.39595317840576 MB  Progress: 34.0 / 93.39595317840576 MB  Progress: 35.0 / 93.39595317840576 MB  Progress: 36.0 / 93.39595317840576 MB  Progress: 37.0 / 93.39595317840576 MB  Progress: 38.0 / 93.39595317840576 MB  Progress: 39.0 / 93.39595317840576 MB  Progress: 40.0 / 93.39595317840576 MB  Progress: 41.0 / 93.39595317840576 MB  Progress: 42.0 / 93.39595317840576 MB  Progress: 43.0 / 93.39595317840576 MB  Progress: 44.0 / 93.39595317840576 MB  Progress: 45.0 / 93.39595317840576 MB  Progress: 46.0 / 93.39595317840576 MB  Progress: 47.0 / 93.39595317840576 MB  Progress: 48.0 / 93.39595317840576 MB  Progress: 49.0 / 93.39595317840576 MB  Progress: 50.0 / 93.39595317840576 MB  Progress: 51.0 / 93.39595317840576 MB  Progress: 52.0 / 93.39595317840576 MB  Progress: 53.0 / 93.39595317840576 MB  Progress: 54.0 / 93.39595317840576 MB  Progress: 55.0 / 93.39595317840576 MB  Progress: 56.0 / 93.39595317840576 MB  Progress: 57.0 / 93.39595317840576 MB  Progress: 58.0 / 93.39595317840576 MB  Progress: 59.0 / 93.39595317840576 MB  Progress: 60.0 / 93.39595317840576 MB  Progress: 61.0 / 93.39595317840576 MB  Progress: 62.0 / 93.39595317840576 MB  Progress: 63.0 / 93.39595317840576 MB  Progress: 64.0 / 93.39595317840576 MB  Progress: 65.0 / 93.39595317840576 MB  Progress: 66.0 / 93.39595317840576 MB  Progress: 67.0 / 93.39595317840576 MB  Progress: 68.0 / 93.39595317840576 MB  Progress: 69.0 / 93.39595317840576 MB  Progress: 70.0 / 93.39595317840576 MB  Progress: 71.0 / 93.39595317840576 MB  Progress: 72.0 / 93.39595317840576 MB  Progress: 73.0 / 93.39595317840576 MB  Progress: 74.0 / 93.39595317840576 MB  Progress: 75.0 / 93.39595317840576 MB  Progress: 76.0 / 93.39595317840576 MB  Progress: 77.0 / 93.39595317840576 MB  Progress: 78.0 / 93.39595317840576 MB  Progress: 79.0 / 93.39595317840576 MB  Progress: 80.0 / 93.39595317840576 MB  Progress: 81.0 / 93.39595317840576 MB  Progress: 82.0 / 93.39595317840576 MB  Progress: 83.0 / 93.39595317840576 MB  Progress: 84.0 / 93.39595317840576 MB  Progress: 85.0 / 93.39595317840576 MB  Progress: 86.0 / 93.39595317840576 MB  Progress: 87.0 / 93.39595317840576 MB  Progress: 88.0 / 93.39595317840576 MB  Progress: 89.0 / 93.39595317840576 MB  Progress: 90.0 / 93.39595317840576 MB  Progress: 91.0 / 93.39595317840576 MB  Progress: 92.0 / 93.39595317840576 MB  Progress: 93.0 / 93.39595317840576 MB  Progress: 93.4 / 93.39595317840576 MB
+  Download complete  (93.4 MB)
+============================================================
+
+============================================================
+STEP 2 : Building ResNet34-UNet model
+  Encoder   : resnet34
+  Decoder   : UNet
+  In channels: 3  (RGB)
+  Classes   : 19
+  Model built successfully.
+============================================================
+
+============================================================
+STEP 3 : Loading weights into model
+  Checkpoint: flair_rgb_unet_weights.pth
+  Prefix used     : 'model.seg_model.'
+  Keys matched    : 278
+  Weights loaded successfully.
+  Device: cuda
+============================================================
+
+============================================================
+STEP 4 : Scanning input directory for GeoTIFF images
+  Directory: /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/Lakhimpur_Whole_Sat_Data/Lakhimpur
+  Found 1071 image(s):
+    - Lakhimpur_1000_20_0.14928m.tif
+    - Lakhimpur_1001_20_0.14928m.tif
+    - Lakhimpur_1002_20_0.14928m.tif
+    - Lakhimpur_1003_20_0.14928m.tif
+    - Lakhimpur_1004_20_0.14928m.tif
+    - Lakhimpur_1005_20_0.14928m.tif
+    - Lakhimpur_1006_20_0.14928m.tif
+    - Lakhimpur_1007_20_0.14928m.tif
+    - Lakhimpur_1008_20_0.14928m.tif
+    - Lakhimpur_1009_20_0.14928m.tif
+    - Lakhimpur_100_20_0.14928m.tif
+    - Lakhimpur_1010_20_0.14928m.tif
+    - Lakhimpur_1011_20_0.14928m.tif
+    - Lakhimpur_1012_20_0.14928m.tif
+    - Lakhimpur_1013_20_0.14928m.tif
+    - Lakhimpur_1014_20_0.14928m.tif
+    - Lakhimpur_1015_20_0.14928m.tif
+    - Lakhimpur_1016_20_0.14928m.tif
+    - Lakhimpur_1017_20_0.14928m.tif
+    - Lakhimpur_1018_20_0.14928m.tif
+    - Lakhimpur_1019_20_0.14928m.tif
+    - Lakhimpur_101_20_0.14928m.tif
+    - Lakhimpur_1020_20_0.14928m.tif
+    - Lakhimpur_1021_20_0.14928m.tif
+    - Lakhimpur_1022_20_0.14928m.tif
+    - Lakhimpur_1023_20_0.14928m.tif
+    - Lakhimpur_1024_20_0.14928m.tif
+    - Lakhimpur_1025_20_0.14928m.tif
+    - Lakhimpur_1026_20_0.14928m.tif
+    - Lakhimpur_1027_20_0.14928m.tif
+    - Lakhimpur_1028_20_0.14928m.tif
+    - Lakhimpur_1029_20_0.14928m.tif
+    - Lakhimpur_102_20_0.14928m.tif
+    - Lakhimpur_1030_20_0.14928m.tif
+    - Lakhimpur_1031_20_0.14928m.tif
+    - Lakhimpur_1032_20_0.14928m.tif
+    - Lakhimpur_1033_20_0.14928m.tif
+    - Lakhimpur_1034_20_0.14928m.tif
+    - Lakhimpur_1035_20_0.14928m.tif
+    - Lakhimpur_1036_20_0.14928m.tif
+    - Lakhimpur_1037_20_0.14928m.tif
+    - Lakhimpur_1038_20_0.14928m.tif
+    - Lakhimpur_1039_20_0.14928m.tif
+    - Lakhimpur_103_20_0.14928m.tif
+    - Lakhimpur_1040_20_0.14928m.tif
+    - Lakhimpur_1041_20_0.14928m.tif
+    - Lakhimpur_1042_20_0.14928m.tif
+    - Lakhimpur_1043_20_0.14928m.tif
+    - Lakhimpur_1044_20_0.14928m.tif
+    - Lakhimpur_1045_20_0.14928m.tif
+    - Lakhimpur_1046_20_0.14928m.tif
+    - Lakhimpur_1047_20_0.14928m.tif
+    - Lakhimpur_1048_20_0.14928m.tif
+    - Lakhimpur_1049_20_0.14928m.tif
+    - Lakhimpur_104_20_0.14928m.tif
+    - Lakhimpur_1050_20_0.14928m.tif
+    - Lakhimpur_1051_20_0.14928m.tif
+    - Lakhimpur_1052_20_0.14928m.tif
+    - Lakhimpur_1053_20_0.14928m.tif
+    - Lakhimpur_1054_20_0.14928m.tif
+    - Lakhimpur_1055_20_0.14928m.tif
+    - Lakhimpur_1056_20_0.14928m.tif
+    - Lakhimpur_1057_20_0.14928m.tif
+    - Lakhimpur_1058_20_0.14928m.tif
+    - Lakhimpur_1059_20_0.14928m.tif
+    - Lakhimpur_105_20_0.14928m.tif
+    - Lakhimpur_1060_20_0.14928m.tif
+    - Lakhimpur_1061_20_0.14928m.tif
+    - Lakhimpur_1062_20_0.14928m.tif
+    - Lakhimpur_1063_20_0.14928m.tif
+    - Lakhimpur_1064_20_0.14928m.tif
+    - Lakhimpur_1065_20_0.14928m.tif
+    - Lakhimpur_1066_20_0.14928m.tif
+    - Lakhimpur_1067_20_0.14928m.tif
+    - Lakhimpur_1068_20_0.14928m.tif
+    - Lakhimpur_1069_20_0.14928m.tif
+    - Lakhimpur_106_20_0.14928m.tif
+    - Lakhimpur_1070_20_0.14928m.tif
+    - Lakhimpur_1071_20_0.14928m.tif
+    - Lakhimpur_107_20_0.14928m.tif
+    - Lakhimpur_108_20_0.14928m.tif
+    - Lakhimpur_109_20_0.14928m.tif
+    - Lakhimpur_10_20_0.14928m.tif
+    - Lakhimpur_110_20_0.14928m.tif
+    - Lakhimpur_111_20_0.14928m.tif
+    - Lakhimpur_112_20_0.14928m.tif
+    - Lakhimpur_113_20_0.14928m.tif
+    - Lakhimpur_114_20_0.14928m.tif
+    - Lakhimpur_115_20_0.14928m.tif
+    - Lakhimpur_116_20_0.14928m.tif
+    - Lakhimpur_117_20_0.14928m.tif
+    - Lakhimpur_118_20_0.14928m.tif
+    - Lakhimpur_119_20_0.14928m.tif
+    - Lakhimpur_11_20_0.14928m.tif
+    - Lakhimpur_120_20_0.14928m.tif
+    - Lakhimpur_121_20_0.14928m.tif
+    - Lakhimpur_122_20_0.14928m.tif
+    - Lakhimpur_123_20_0.14928m.tif
+    - Lakhimpur_124_20_0.14928m.tif
+    - Lakhimpur_125_20_0.14928m.tif
+    - Lakhimpur_126_20_0.14928m.tif
+    - Lakhimpur_127_20_0.14928m.tif
+    - Lakhimpur_128_20_0.14928m.tif
+    - Lakhimpur_129_20_0.14928m.tif
+    - Lakhimpur_12_20_0.14928m.tif
+    - Lakhimpur_130_20_0.14928m.tif
+    - Lakhimpur_131_20_0.14928m.tif
+    - Lakhimpur_132_20_0.14928m.tif
+    - Lakhimpur_133_20_0.14928m.tif
+    - Lakhimpur_134_20_0.14928m.tif
+    - Lakhimpur_135_20_0.14928m.tif
+    - Lakhimpur_136_20_0.14928m.tif
+    - Lakhimpur_137_20_0.14928m.tif
+    - Lakhimpur_138_20_0.14928m.tif
+    - Lakhimpur_139_20_0.14928m.tif
+    - Lakhimpur_13_20_0.14928m.tif
+    - Lakhimpur_140_20_0.14928m.tif
+    - Lakhimpur_141_20_0.14928m.tif
+    - Lakhimpur_142_20_0.14928m.tif
+    - Lakhimpur_143_20_0.14928m.tif
+    - Lakhimpur_144_20_0.14928m.tif
+    - Lakhimpur_145_20_0.14928m.tif
+    - Lakhimpur_146_20_0.14928m.tif
+    - Lakhimpur_147_20_0.14928m.tif
+    - Lakhimpur_148_20_0.14928m.tif
+    - Lakhimpur_149_20_0.14928m.tif
+    - Lakhimpur_14_20_0.14928m.tif
+    - Lakhimpur_150_20_0.14928m.tif
+    - Lakhimpur_151_20_0.14928m.tif
+    - Lakhimpur_152_20_0.14928m.tif
+    - Lakhimpur_153_20_0.14928m.tif
+    - Lakhimpur_154_20_0.14928m.tif
+    - Lakhimpur_155_20_0.14928m.tif
+    - Lakhimpur_156_20_0.14928m.tif
+    - Lakhimpur_157_20_0.14928m.tif
+    - Lakhimpur_158_20_0.14928m.tif
+    - Lakhimpur_159_20_0.14928m.tif
+    - Lakhimpur_15_20_0.14928m.tif
+    - Lakhimpur_160_20_0.14928m.tif
+    - Lakhimpur_161_20_0.14928m.tif
+    - Lakhimpur_162_20_0.14928m.tif
+    - Lakhimpur_163_20_0.14928m.tif
+    - Lakhimpur_164_20_0.14928m.tif
+    - Lakhimpur_165_20_0.14928m.tif
+    - Lakhimpur_166_20_0.14928m.tif
+    - Lakhimpur_167_20_0.14928m.tif
+    - Lakhimpur_168_20_0.14928m.tif
+    - Lakhimpur_169_20_0.14928m.tif
+    - Lakhimpur_16_20_0.14928m.tif
+    - Lakhimpur_170_20_0.14928m.tif
+    - Lakhimpur_171_20_0.14928m.tif
+    - Lakhimpur_172_20_0.14928m.tif
+    - Lakhimpur_173_20_0.14928m.tif
+    - Lakhimpur_174_20_0.14928m.tif
+    - Lakhimpur_175_20_0.14928m.tif
+    - Lakhimpur_176_20_0.14928m.tif
+    - Lakhimpur_177_20_0.14928m.tif
+    - Lakhimpur_178_20_0.14928m.tif
+    - Lakhimpur_179_20_0.14928m.tif
+    - Lakhimpur_17_20_0.14928m.tif
+    - Lakhimpur_180_20_0.14928m.tif
+    - Lakhimpur_181_20_0.14928m.tif
+    - Lakhimpur_182_20_0.14928m.tif
+    - Lakhimpur_183_20_0.14928m.tif
+    - Lakhimpur_184_20_0.14928m.tif
+    - Lakhimpur_185_20_0.14928m.tif
+    - Lakhimpur_186_20_0.14928m.tif
+    - Lakhimpur_187_20_0.14928m.tif
+    - Lakhimpur_188_20_0.14928m.tif
+    - Lakhimpur_189_20_0.14928m.tif
+    - Lakhimpur_18_20_0.14928m.tif
+    - Lakhimpur_190_20_0.14928m.tif
+    - Lakhimpur_191_20_0.14928m.tif
+    - Lakhimpur_192_20_0.14928m.tif
+    - Lakhimpur_193_20_0.14928m.tif
+    - Lakhimpur_194_20_0.14928m.tif
+    - Lakhimpur_195_20_0.14928m.tif
+    - Lakhimpur_196_20_0.14928m.tif
+    - Lakhimpur_197_20_0.14928m.tif
+    - Lakhimpur_198_20_0.14928m.tif
+    - Lakhimpur_199_20_0.14928m.tif
+    - Lakhimpur_19_20_0.14928m.tif
+    - Lakhimpur_1_20_0.14928m.tif
+    - Lakhimpur_200_20_0.14928m.tif
+    - Lakhimpur_201_20_0.14928m.tif
+    - Lakhimpur_202_20_0.14928m.tif
+    - Lakhimpur_203_20_0.14928m.tif
+    - Lakhimpur_204_20_0.14928m.tif
+    - Lakhimpur_205_20_0.14928m.tif
+    - Lakhimpur_206_20_0.14928m.tif
+    - Lakhimpur_207_20_0.14928m.tif
+    - Lakhimpur_208_20_0.14928m.tif
+    - Lakhimpur_209_20_0.14928m.tif
+    - Lakhimpur_20_20_0.14928m.tif
+    - Lakhimpur_210_20_0.14928m.tif
+    - Lakhimpur_211_20_0.14928m.tif
+    - Lakhimpur_212_20_0.14928m.tif
+    - Lakhimpur_213_20_0.14928m.tif
+    - Lakhimpur_214_20_0.14928m.tif
+    - Lakhimpur_215_20_0.14928m.tif
+    - Lakhimpur_216_20_0.14928m.tif
+    - Lakhimpur_217_20_0.14928m.tif
+    - Lakhimpur_218_20_0.14928m.tif
+    - Lakhimpur_219_20_0.14928m.tif
+    - Lakhimpur_21_20_0.14928m.tif
+    - Lakhimpur_220_20_0.14928m.tif
+    - Lakhimpur_221_20_0.14928m.tif
+    - Lakhimpur_222_20_0.14928m.tif
+    - Lakhimpur_223_20_0.14928m.tif
+    - Lakhimpur_224_20_0.14928m.tif
+    - Lakhimpur_225_20_0.14928m.tif
+    - Lakhimpur_226_20_0.14928m.tif
+    - Lakhimpur_227_20_0.14928m.tif
+    - Lakhimpur_228_20_0.14928m.tif
+    - Lakhimpur_229_20_0.14928m.tif
+    - Lakhimpur_22_20_0.14928m.tif
+    - Lakhimpur_230_20_0.14928m.tif
+    - Lakhimpur_231_20_0.14928m.tif
+    - Lakhimpur_232_20_0.14928m.tif
+    - Lakhimpur_233_20_0.14928m.tif
+    - Lakhimpur_234_20_0.14928m.tif
+    - Lakhimpur_235_20_0.14928m.tif
+    - Lakhimpur_236_20_0.14928m.tif
+    - Lakhimpur_237_20_0.14928m.tif
+    - Lakhimpur_238_20_0.14928m.tif
+    - Lakhimpur_239_20_0.14928m.tif
+    - Lakhimpur_23_20_0.14928m.tif
+    - Lakhimpur_240_20_0.14928m.tif
+    - Lakhimpur_241_20_0.14928m.tif
+    - Lakhimpur_242_20_0.14928m.tif
+    - Lakhimpur_243_20_0.14928m.tif
+    - Lakhimpur_244_20_0.14928m.tif
+    - Lakhimpur_245_20_0.14928m.tif
+    - Lakhimpur_246_20_0.14928m.tif
+    - Lakhimpur_247_20_0.14928m.tif
+    - Lakhimpur_248_20_0.14928m.tif
+    - Lakhimpur_249_20_0.14928m.tif
+    - Lakhimpur_24_20_0.14928m.tif
+    - Lakhimpur_250_20_0.14928m.tif
+    - Lakhimpur_251_20_0.14928m.tif
+    - Lakhimpur_252_20_0.14928m.tif
+    - Lakhimpur_253_20_0.14928m.tif
+    - Lakhimpur_254_20_0.14928m.tif
+    - Lakhimpur_255_20_0.14928m.tif
+    - Lakhimpur_256_20_0.14928m.tif
+    - Lakhimpur_257_20_0.14928m.tif
+    - Lakhimpur_258_20_0.14928m.tif
+    - Lakhimpur_259_20_0.14928m.tif
+    - Lakhimpur_25_20_0.14928m.tif
+    - Lakhimpur_260_20_0.14928m.tif
+    - Lakhimpur_261_20_0.14928m.tif
+    - Lakhimpur_262_20_0.14928m.tif
+    - Lakhimpur_263_20_0.14928m.tif
+    - Lakhimpur_264_20_0.14928m.tif
+    - Lakhimpur_265_20_0.14928m.tif
+    - Lakhimpur_266_20_0.14928m.tif
+    - Lakhimpur_267_20_0.14928m.tif
+    - Lakhimpur_268_20_0.14928m.tif
+    - Lakhimpur_269_20_0.14928m.tif
+    - Lakhimpur_26_20_0.14928m.tif
+    - Lakhimpur_270_20_0.14928m.tif
+    - Lakhimpur_271_20_0.14928m.tif
+    - Lakhimpur_272_20_0.14928m.tif
+    - Lakhimpur_273_20_0.14928m.tif
+    - Lakhimpur_274_20_0.14928m.tif
+    - Lakhimpur_275_20_0.14928m.tif
+    - Lakhimpur_276_20_0.14928m.tif
+    - Lakhimpur_277_20_0.14928m.tif
+    - Lakhimpur_278_20_0.14928m.tif
+    - Lakhimpur_279_20_0.14928m.tif
+    - Lakhimpur_27_20_0.14928m.tif
+    - Lakhimpur_280_20_0.14928m.tif
+    - Lakhimpur_281_20_0.14928m.tif
+    - Lakhimpur_282_20_0.14928m.tif
+    - Lakhimpur_283_20_0.14928m.tif
+    - Lakhimpur_284_20_0.14928m.tif
+    - Lakhimpur_285_20_0.14928m.tif
+    - Lakhimpur_286_20_0.14928m.tif
+    - Lakhimpur_287_20_0.14928m.tif
+    - Lakhimpur_288_20_0.14928m.tif
+    - Lakhimpur_289_20_0.14928m.tif
+    - Lakhimpur_28_20_0.14928m.tif
+    - Lakhimpur_290_20_0.14928m.tif
+    - Lakhimpur_291_20_0.14928m.tif
+    - Lakhimpur_292_20_0.14928m.tif
+    - Lakhimpur_293_20_0.14928m.tif
+    - Lakhimpur_294_20_0.14928m.tif
+    - Lakhimpur_295_20_0.14928m.tif
+    - Lakhimpur_296_20_0.14928m.tif
+    - Lakhimpur_297_20_0.14928m.tif
+    - Lakhimpur_298_20_0.14928m.tif
+    - Lakhimpur_299_20_0.14928m.tif
+    - Lakhimpur_29_20_0.14928m.tif
+    - Lakhimpur_2_20_0.14928m.tif
+    - Lakhimpur_300_20_0.14928m.tif
+    - Lakhimpur_301_20_0.14928m.tif
+    - Lakhimpur_302_20_0.14928m.tif
+    - Lakhimpur_303_20_0.14928m.tif
+    - Lakhimpur_304_20_0.14928m.tif
+    - Lakhimpur_305_20_0.14928m.tif
+    - Lakhimpur_306_20_0.14928m.tif
+    - Lakhimpur_307_20_0.14928m.tif
+    - Lakhimpur_308_20_0.14928m.tif
+    - Lakhimpur_309_20_0.14928m.tif
+    - Lakhimpur_30_20_0.14928m.tif
+    - Lakhimpur_310_20_0.14928m.tif
+    - Lakhimpur_311_20_0.14928m.tif
+    - Lakhimpur_312_20_0.14928m.tif
+    - Lakhimpur_313_20_0.14928m.tif
+    - Lakhimpur_314_20_0.14928m.tif
+    - Lakhimpur_315_20_0.14928m.tif
+    - Lakhimpur_316_20_0.14928m.tif
+    - Lakhimpur_317_20_0.14928m.tif
+    - Lakhimpur_318_20_0.14928m.tif
+    - Lakhimpur_319_20_0.14928m.tif
+    - Lakhimpur_31_20_0.14928m.tif
+    - Lakhimpur_320_20_0.14928m.tif
+    - Lakhimpur_321_20_0.14928m.tif
+    - Lakhimpur_322_20_0.14928m.tif
+    - Lakhimpur_323_20_0.14928m.tif
+    - Lakhimpur_324_20_0.14928m.tif
+    - Lakhimpur_325_20_0.14928m.tif
+    - Lakhimpur_326_20_0.14928m.tif
+    - Lakhimpur_327_20_0.14928m.tif
+    - Lakhimpur_328_20_0.14928m.tif
+    - Lakhimpur_329_20_0.14928m.tif
+    - Lakhimpur_32_20_0.14928m.tif
+    - Lakhimpur_330_20_0.14928m.tif
+    - Lakhimpur_331_20_0.14928m.tif
+    - Lakhimpur_332_20_0.14928m.tif
+    - Lakhimpur_333_20_0.14928m.tif
+    - Lakhimpur_334_20_0.14928m.tif
+    - Lakhimpur_335_20_0.14928m.tif
+    - Lakhimpur_336_20_0.14928m.tif
+    - Lakhimpur_337_20_0.14928m.tif
+    - Lakhimpur_338_20_0.14928m.tif
+    - Lakhimpur_339_20_0.14928m.tif
+    - Lakhimpur_33_20_0.14928m.tif
+    - Lakhimpur_340_20_0.14928m.tif
+    - Lakhimpur_341_20_0.14928m.tif
+    - Lakhimpur_342_20_0.14928m.tif
+    - Lakhimpur_343_20_0.14928m.tif
+    - Lakhimpur_344_20_0.14928m.tif
+    - Lakhimpur_345_20_0.14928m.tif
+    - Lakhimpur_346_20_0.14928m.tif
+    - Lakhimpur_347_20_0.14928m.tif
+    - Lakhimpur_348_20_0.14928m.tif
+    - Lakhimpur_349_20_0.14928m.tif
+    - Lakhimpur_34_20_0.14928m.tif
+    - Lakhimpur_350_20_0.14928m.tif
+    - Lakhimpur_351_20_0.14928m.tif
+    - Lakhimpur_352_20_0.14928m.tif
+    - Lakhimpur_353_20_0.14928m.tif
+    - Lakhimpur_354_20_0.14928m.tif
+    - Lakhimpur_355_20_0.14928m.tif
+    - Lakhimpur_356_20_0.14928m.tif
+    - Lakhimpur_357_20_0.14928m.tif
+    - Lakhimpur_358_20_0.14928m.tif
+    - Lakhimpur_359_20_0.14928m.tif
+    - Lakhimpur_35_20_0.14928m.tif
+    - Lakhimpur_360_20_0.14928m.tif
+    - Lakhimpur_361_20_0.14928m.tif
+    - Lakhimpur_362_20_0.14928m.tif
+    - Lakhimpur_363_20_0.14928m.tif
+    - Lakhimpur_364_20_0.14928m.tif
+    - Lakhimpur_365_20_0.14928m.tif
+    - Lakhimpur_366_20_0.14928m.tif
+    - Lakhimpur_367_20_0.14928m.tif
+    - Lakhimpur_368_20_0.14928m.tif
+    - Lakhimpur_369_20_0.14928m.tif
+    - Lakhimpur_36_20_0.14928m.tif
+    - Lakhimpur_370_20_0.14928m.tif
+    - Lakhimpur_371_20_0.14928m.tif
+    - Lakhimpur_372_20_0.14928m.tif
+    - Lakhimpur_373_20_0.14928m.tif
+    - Lakhimpur_374_20_0.14928m.tif
+    - Lakhimpur_375_20_0.14928m.tif
+    - Lakhimpur_376_20_0.14928m.tif
+    - Lakhimpur_377_20_0.14928m.tif
+    - Lakhimpur_378_20_0.14928m.tif
+    - Lakhimpur_379_20_0.14928m.tif
+    - Lakhimpur_37_20_0.14928m.tif
+    - Lakhimpur_380_20_0.14928m.tif
+    - Lakhimpur_381_20_0.14928m.tif
+    - Lakhimpur_382_20_0.14928m.tif
+    - Lakhimpur_383_20_0.14928m.tif
+    - Lakhimpur_384_20_0.14928m.tif
+    - Lakhimpur_385_20_0.14928m.tif
+    - Lakhimpur_386_20_0.14928m.tif
+    - Lakhimpur_387_20_0.14928m.tif
+    - Lakhimpur_388_20_0.14928m.tif
+    - Lakhimpur_389_20_0.14928m.tif
+    - Lakhimpur_38_20_0.14928m.tif
+    - Lakhimpur_390_20_0.14928m.tif
+    - Lakhimpur_391_20_0.14928m.tif
+    - Lakhimpur_392_20_0.14928m.tif
+    - Lakhimpur_393_20_0.14928m.tif
+    - Lakhimpur_394_20_0.14928m.tif
+    - Lakhimpur_395_20_0.14928m.tif
+    - Lakhimpur_396_20_0.14928m.tif
+    - Lakhimpur_397_20_0.14928m.tif
+    - Lakhimpur_398_20_0.14928m.tif
+    - Lakhimpur_399_20_0.14928m.tif
+    - Lakhimpur_39_20_0.14928m.tif
+    - Lakhimpur_3_20_0.14928m.tif
+    - Lakhimpur_400_20_0.14928m.tif
+    - Lakhimpur_401_20_0.14928m.tif
+    - Lakhimpur_402_20_0.14928m.tif
+    - Lakhimpur_403_20_0.14928m.tif
+    - Lakhimpur_404_20_0.14928m.tif
+    - Lakhimpur_405_20_0.14928m.tif
+    - Lakhimpur_406_20_0.14928m.tif
+    - Lakhimpur_407_20_0.14928m.tif
+    - Lakhimpur_408_20_0.14928m.tif
+    - Lakhimpur_409_20_0.14928m.tif
+    - Lakhimpur_40_20_0.14928m.tif
+    - Lakhimpur_410_20_0.14928m.tif
+    - Lakhimpur_411_20_0.14928m.tif
+    - Lakhimpur_412_20_0.14928m.tif
+    - Lakhimpur_413_20_0.14928m.tif
+    - Lakhimpur_414_20_0.14928m.tif
+    - Lakhimpur_415_20_0.14928m.tif
+    - Lakhimpur_416_20_0.14928m.tif
+    - Lakhimpur_417_20_0.14928m.tif
+    - Lakhimpur_418_20_0.14928m.tif
+    - Lakhimpur_419_20_0.14928m.tif
+    - Lakhimpur_41_20_0.14928m.tif
+    - Lakhimpur_420_20_0.14928m.tif
+    - Lakhimpur_421_20_0.14928m.tif
+    - Lakhimpur_422_20_0.14928m.tif
+    - Lakhimpur_423_20_0.14928m.tif
+    - Lakhimpur_424_20_0.14928m.tif
+    - Lakhimpur_425_20_0.14928m.tif
+    - Lakhimpur_426_20_0.14928m.tif
+    - Lakhimpur_427_20_0.14928m.tif
+    - Lakhimpur_428_20_0.14928m.tif
+    - Lakhimpur_429_20_0.14928m.tif
+    - Lakhimpur_42_20_0.14928m.tif
+    - Lakhimpur_430_20_0.14928m.tif
+    - Lakhimpur_431_20_0.14928m.tif
+    - Lakhimpur_432_20_0.14928m.tif
+    - Lakhimpur_433_20_0.14928m.tif
+    - Lakhimpur_434_20_0.14928m.tif
+    - Lakhimpur_435_20_0.14928m.tif
+    - Lakhimpur_436_20_0.14928m.tif
+    - Lakhimpur_437_20_0.14928m.tif
+    - Lakhimpur_438_20_0.14928m.tif
+    - Lakhimpur_439_20_0.14928m.tif
+    - Lakhimpur_43_20_0.14928m.tif
+    - Lakhimpur_440_20_0.14928m.tif
+    - Lakhimpur_441_20_0.14928m.tif
+    - Lakhimpur_442_20_0.14928m.tif
+    - Lakhimpur_443_20_0.14928m.tif
+    - Lakhimpur_444_20_0.14928m.tif
+    - Lakhimpur_445_20_0.14928m.tif
+    - Lakhimpur_446_20_0.14928m.tif
+    - Lakhimpur_447_20_0.14928m.tif
+    - Lakhimpur_448_20_0.14928m.tif
+    - Lakhimpur_449_20_0.14928m.tif
+    - Lakhimpur_44_20_0.14928m.tif
+    - Lakhimpur_450_20_0.14928m.tif
+    - Lakhimpur_451_20_0.14928m.tif
+    - Lakhimpur_452_20_0.14928m.tif
+    - Lakhimpur_453_20_0.14928m.tif
+    - Lakhimpur_454_20_0.14928m.tif
+    - Lakhimpur_455_20_0.14928m.tif
+    - Lakhimpur_456_20_0.14928m.tif
+    - Lakhimpur_457_20_0.14928m.tif
+    - Lakhimpur_458_20_0.14928m.tif
+    - Lakhimpur_459_20_0.14928m.tif
+    - Lakhimpur_45_20_0.14928m.tif
+    - Lakhimpur_460_20_0.14928m.tif
+    - Lakhimpur_461_20_0.14928m.tif
+    - Lakhimpur_462_20_0.14928m.tif
+    - Lakhimpur_463_20_0.14928m.tif
+    - Lakhimpur_464_20_0.14928m.tif
+    - Lakhimpur_465_20_0.14928m.tif
+    - Lakhimpur_466_20_0.14928m.tif
+    - Lakhimpur_467_20_0.14928m.tif
+    - Lakhimpur_468_20_0.14928m.tif
+    - Lakhimpur_469_20_0.14928m.tif
+    - Lakhimpur_46_20_0.14928m.tif
+    - Lakhimpur_470_20_0.14928m.tif
+    - Lakhimpur_471_20_0.14928m.tif
+    - Lakhimpur_472_20_0.14928m.tif
+    - Lakhimpur_473_20_0.14928m.tif
+    - Lakhimpur_474_20_0.14928m.tif
+    - Lakhimpur_475_20_0.14928m.tif
+    - Lakhimpur_476_20_0.14928m.tif
+    - Lakhimpur_477_20_0.14928m.tif
+    - Lakhimpur_478_20_0.14928m.tif
+    - Lakhimpur_479_20_0.14928m.tif
+    - Lakhimpur_47_20_0.14928m.tif
+    - Lakhimpur_480_20_0.14928m.tif
+    - Lakhimpur_481_20_0.14928m.tif
+    - Lakhimpur_482_20_0.14928m.tif
+    - Lakhimpur_483_20_0.14928m.tif
+    - Lakhimpur_484_20_0.14928m.tif
+    - Lakhimpur_485_20_0.14928m.tif
+    - Lakhimpur_486_20_0.14928m.tif
+    - Lakhimpur_487_20_0.14928m.tif
+    - Lakhimpur_488_20_0.14928m.tif
+    - Lakhimpur_489_20_0.14928m.tif
+    - Lakhimpur_48_20_0.14928m.tif
+    - Lakhimpur_490_20_0.14928m.tif
+    - Lakhimpur_491_20_0.14928m.tif
+    - Lakhimpur_492_20_0.14928m.tif
+    - Lakhimpur_493_20_0.14928m.tif
+    - Lakhimpur_494_20_0.14928m.tif
+    - Lakhimpur_495_20_0.14928m.tif
+    - Lakhimpur_496_20_0.14928m.tif
+    - Lakhimpur_497_20_0.14928m.tif
+    - Lakhimpur_498_20_0.14928m.tif
+    - Lakhimpur_499_20_0.14928m.tif
+    - Lakhimpur_49_20_0.14928m.tif
+    - Lakhimpur_4_20_0.14928m.tif
+    - Lakhimpur_500_20_0.14928m.tif
+    - Lakhimpur_501_20_0.14928m.tif
+    - Lakhimpur_502_20_0.14928m.tif
+    - Lakhimpur_503_20_0.14928m.tif
+    - Lakhimpur_504_20_0.14928m.tif
+    - Lakhimpur_505_20_0.14928m.tif
+    - Lakhimpur_506_20_0.14928m.tif
+    - Lakhimpur_507_20_0.14928m.tif
+    - Lakhimpur_508_20_0.14928m.tif
+    - Lakhimpur_509_20_0.14928m.tif
+    - Lakhimpur_50_20_0.14928m.tif
+    - Lakhimpur_510_20_0.14928m.tif
+    - Lakhimpur_511_20_0.14928m.tif
+    - Lakhimpur_512_20_0.14928m.tif
+    - Lakhimpur_513_20_0.14928m.tif
+    - Lakhimpur_514_20_0.14928m.tif
+    - Lakhimpur_515_20_0.14928m.tif
+    - Lakhimpur_516_20_0.14928m.tif
+    - Lakhimpur_517_20_0.14928m.tif
+    - Lakhimpur_518_20_0.14928m.tif
+    - Lakhimpur_519_20_0.14928m.tif
+    - Lakhimpur_51_20_0.14928m.tif
+    - Lakhimpur_520_20_0.14928m.tif
+    - Lakhimpur_521_20_0.14928m.tif
+    - Lakhimpur_522_20_0.14928m.tif
+    - Lakhimpur_523_20_0.14928m.tif
+    - Lakhimpur_524_20_0.14928m.tif
+    - Lakhimpur_525_20_0.14928m.tif
+    - Lakhimpur_526_20_0.14928m.tif
+    - Lakhimpur_527_20_0.14928m.tif
+    - Lakhimpur_528_20_0.14928m.tif
+    - Lakhimpur_529_20_0.14928m.tif
+    - Lakhimpur_52_20_0.14928m.tif
+    - Lakhimpur_530_20_0.14928m.tif
+    - Lakhimpur_531_20_0.14928m.tif
+    - Lakhimpur_532_20_0.14928m.tif
+    - Lakhimpur_533_20_0.14928m.tif
+    - Lakhimpur_534_20_0.14928m.tif
+    - Lakhimpur_535_20_0.14928m.tif
+    - Lakhimpur_536_20_0.14928m.tif
+    - Lakhimpur_537_20_0.14928m.tif
+    - Lakhimpur_538_20_0.14928m.tif
+    - Lakhimpur_539_20_0.14928m.tif
+    - Lakhimpur_53_20_0.14928m.tif
+    - Lakhimpur_540_20_0.14928m.tif
+    - Lakhimpur_541_20_0.14928m.tif
+    - Lakhimpur_542_20_0.14928m.tif
+    - Lakhimpur_543_20_0.14928m.tif
+    - Lakhimpur_544_20_0.14928m.tif
+    - Lakhimpur_545_20_0.14928m.tif
+    - Lakhimpur_546_20_0.14928m.tif
+    - Lakhimpur_547_20_0.14928m.tif
+    - Lakhimpur_548_20_0.14928m.tif
+    - Lakhimpur_549_20_0.14928m.tif
+    - Lakhimpur_54_20_0.14928m.tif
+    - Lakhimpur_550_20_0.14928m.tif
+    - Lakhimpur_551_20_0.14928m.tif
+    - Lakhimpur_552_20_0.14928m.tif
+    - Lakhimpur_553_20_0.14928m.tif
+    - Lakhimpur_554_20_0.14928m.tif
+    - Lakhimpur_555_20_0.14928m.tif
+    - Lakhimpur_556_20_0.14928m.tif
+    - Lakhimpur_557_20_0.14928m.tif
+    - Lakhimpur_558_20_0.14928m.tif
+    - Lakhimpur_559_20_0.14928m.tif
+    - Lakhimpur_55_20_0.14928m.tif
+    - Lakhimpur_560_20_0.14928m.tif
+    - Lakhimpur_561_20_0.14928m.tif
+    - Lakhimpur_562_20_0.14928m.tif
+    - Lakhimpur_563_20_0.14928m.tif
+    - Lakhimpur_564_20_0.14928m.tif
+    - Lakhimpur_565_20_0.14928m.tif
+    - Lakhimpur_566_20_0.14928m.tif
+    - Lakhimpur_567_20_0.14928m.tif
+    - Lakhimpur_568_20_0.14928m.tif
+    - Lakhimpur_569_20_0.14928m.tif
+    - Lakhimpur_56_20_0.14928m.tif
+    - Lakhimpur_570_20_0.14928m.tif
+    - Lakhimpur_571_20_0.14928m.tif
+    - Lakhimpur_572_20_0.14928m.tif
+    - Lakhimpur_573_20_0.14928m.tif
+    - Lakhimpur_574_20_0.14928m.tif
+    - Lakhimpur_575_20_0.14928m.tif
+    - Lakhimpur_576_20_0.14928m.tif
+    - Lakhimpur_577_20_0.14928m.tif
+    - Lakhimpur_578_20_0.14928m.tif
+    - Lakhimpur_579_20_0.14928m.tif
+    - Lakhimpur_57_20_0.14928m.tif
+    - Lakhimpur_580_20_0.14928m.tif
+    - Lakhimpur_581_20_0.14928m.tif
+    - Lakhimpur_582_20_0.14928m.tif
+    - Lakhimpur_583_20_0.14928m.tif
+    - Lakhimpur_584_20_0.14928m.tif
+    - Lakhimpur_585_20_0.14928m.tif
+    - Lakhimpur_586_20_0.14928m.tif
+    - Lakhimpur_587_20_0.14928m.tif
+    - Lakhimpur_588_20_0.14928m.tif
+    - Lakhimpur_589_20_0.14928m.tif
+    - Lakhimpur_58_20_0.14928m.tif
+    - Lakhimpur_590_20_0.14928m.tif
+    - Lakhimpur_591_20_0.14928m.tif
+    - Lakhimpur_592_20_0.14928m.tif
+    - Lakhimpur_593_20_0.14928m.tif
+    - Lakhimpur_594_20_0.14928m.tif
+    - Lakhimpur_595_20_0.14928m.tif
+    - Lakhimpur_596_20_0.14928m.tif
+    - Lakhimpur_597_20_0.14928m.tif
+    - Lakhimpur_598_20_0.14928m.tif
+    - Lakhimpur_599_20_0.14928m.tif
+    - Lakhimpur_59_20_0.14928m.tif
+    - Lakhimpur_5_20_0.14928m.tif
+    - Lakhimpur_600_20_0.14928m.tif
+    - Lakhimpur_601_20_0.14928m.tif
+    - Lakhimpur_602_20_0.14928m.tif
+    - Lakhimpur_603_20_0.14928m.tif
+    - Lakhimpur_604_20_0.14928m.tif
+    - Lakhimpur_605_20_0.14928m.tif
+    - Lakhimpur_606_20_0.14928m.tif
+    - Lakhimpur_607_20_0.14928m.tif
+    - Lakhimpur_608_20_0.14928m.tif
+    - Lakhimpur_609_20_0.14928m.tif
+    - Lakhimpur_60_20_0.14928m.tif
+    - Lakhimpur_610_20_0.14928m.tif
+    - Lakhimpur_611_20_0.14928m.tif
+    - Lakhimpur_612_20_0.14928m.tif
+    - Lakhimpur_613_20_0.14928m.tif
+    - Lakhimpur_614_20_0.14928m.tif
+    - Lakhimpur_615_20_0.14928m.tif
+    - Lakhimpur_616_20_0.14928m.tif
+    - Lakhimpur_617_20_0.14928m.tif
+    - Lakhimpur_618_20_0.14928m.tif
+    - Lakhimpur_619_20_0.14928m.tif
+    - Lakhimpur_61_20_0.14928m.tif
+    - Lakhimpur_620_20_0.14928m.tif
+    - Lakhimpur_621_20_0.14928m.tif
+    - Lakhimpur_622_20_0.14928m.tif
+    - Lakhimpur_623_20_0.14928m.tif
+    - Lakhimpur_624_20_0.14928m.tif
+    - Lakhimpur_625_20_0.14928m.tif
+    - Lakhimpur_626_20_0.14928m.tif
+    - Lakhimpur_627_20_0.14928m.tif
+    - Lakhimpur_628_20_0.14928m.tif
+    - Lakhimpur_629_20_0.14928m.tif
+    - Lakhimpur_62_20_0.14928m.tif
+    - Lakhimpur_630_20_0.14928m.tif
+    - Lakhimpur_631_20_0.14928m.tif
+    - Lakhimpur_632_20_0.14928m.tif
+    - Lakhimpur_633_20_0.14928m.tif
+    - Lakhimpur_634_20_0.14928m.tif
+    - Lakhimpur_635_20_0.14928m.tif
+    - Lakhimpur_636_20_0.14928m.tif
+    - Lakhimpur_637_20_0.14928m.tif
+    - Lakhimpur_638_20_0.14928m.tif
+    - Lakhimpur_639_20_0.14928m.tif
+    - Lakhimpur_63_20_0.14928m.tif
+    - Lakhimpur_640_20_0.14928m.tif
+    - Lakhimpur_641_20_0.14928m.tif
+    - Lakhimpur_642_20_0.14928m.tif
+    - Lakhimpur_643_20_0.14928m.tif
+    - Lakhimpur_644_20_0.14928m.tif
+    - Lakhimpur_645_20_0.14928m.tif
+    - Lakhimpur_646_20_0.14928m.tif
+    - Lakhimpur_647_20_0.14928m.tif
+    - Lakhimpur_648_20_0.14928m.tif
+    - Lakhimpur_649_20_0.14928m.tif
+    - Lakhimpur_64_20_0.14928m.tif
+    - Lakhimpur_650_20_0.14928m.tif
+    - Lakhimpur_651_20_0.14928m.tif
+    - Lakhimpur_652_20_0.14928m.tif
+    - Lakhimpur_653_20_0.14928m.tif
+    - Lakhimpur_654_20_0.14928m.tif
+    - Lakhimpur_655_20_0.14928m.tif
+    - Lakhimpur_656_20_0.14928m.tif
+    - Lakhimpur_657_20_0.14928m.tif
+    - Lakhimpur_658_20_0.14928m.tif
+    - Lakhimpur_659_20_0.14928m.tif
+    - Lakhimpur_65_20_0.14928m.tif
+    - Lakhimpur_660_20_0.14928m.tif
+    - Lakhimpur_661_20_0.14928m.tif
+    - Lakhimpur_662_20_0.14928m.tif
+    - Lakhimpur_663_20_0.14928m.tif
+    - Lakhimpur_664_20_0.14928m.tif
+    - Lakhimpur_665_20_0.14928m.tif
+    - Lakhimpur_666_20_0.14928m.tif
+    - Lakhimpur_667_20_0.14928m.tif
+    - Lakhimpur_668_20_0.14928m.tif
+    - Lakhimpur_669_20_0.14928m.tif
+    - Lakhimpur_66_20_0.14928m.tif
+    - Lakhimpur_670_20_0.14928m.tif
+    - Lakhimpur_671_20_0.14928m.tif
+    - Lakhimpur_672_20_0.14928m.tif
+    - Lakhimpur_673_20_0.14928m.tif
+    - Lakhimpur_674_20_0.14928m.tif
+    - Lakhimpur_675_20_0.14928m.tif
+    - Lakhimpur_676_20_0.14928m.tif
+    - Lakhimpur_677_20_0.14928m.tif
+    - Lakhimpur_678_20_0.14928m.tif
+    - Lakhimpur_679_20_0.14928m.tif
+    - Lakhimpur_67_20_0.14928m.tif
+    - Lakhimpur_680_20_0.14928m.tif
+    - Lakhimpur_681_20_0.14928m.tif
+    - Lakhimpur_682_20_0.14928m.tif
+    - Lakhimpur_683_20_0.14928m.tif
+    - Lakhimpur_684_20_0.14928m.tif
+    - Lakhimpur_685_20_0.14928m.tif
+    - Lakhimpur_686_20_0.14928m.tif
+    - Lakhimpur_687_20_0.14928m.tif
+    - Lakhimpur_688_20_0.14928m.tif
+    - Lakhimpur_689_20_0.14928m.tif
+    - Lakhimpur_68_20_0.14928m.tif
+    - Lakhimpur_690_20_0.14928m.tif
+    - Lakhimpur_691_20_0.14928m.tif
+    - Lakhimpur_692_20_0.14928m.tif
+    - Lakhimpur_693_20_0.14928m.tif
+    - Lakhimpur_694_20_0.14928m.tif
+    - Lakhimpur_695_20_0.14928m.tif
+    - Lakhimpur_696_20_0.14928m.tif
+    - Lakhimpur_697_20_0.14928m.tif
+    - Lakhimpur_698_20_0.14928m.tif
+    - Lakhimpur_699_20_0.14928m.tif
+    - Lakhimpur_69_20_0.14928m.tif
+    - Lakhimpur_6_20_0.14928m.tif
+    - Lakhimpur_700_20_0.14928m.tif
+    - Lakhimpur_701_20_0.14928m.tif
+    - Lakhimpur_702_20_0.14928m.tif
+    - Lakhimpur_703_20_0.14928m.tif
+    - Lakhimpur_704_20_0.14928m.tif
+    - Lakhimpur_705_20_0.14928m.tif
+    - Lakhimpur_706_20_0.14928m.tif
+    - Lakhimpur_707_20_0.14928m.tif
+    - Lakhimpur_708_20_0.14928m.tif
+    - Lakhimpur_709_20_0.14928m.tif
+    - Lakhimpur_70_20_0.14928m.tif
+    - Lakhimpur_710_20_0.14928m.tif
+    - Lakhimpur_711_20_0.14928m.tif
+    - Lakhimpur_712_20_0.14928m.tif
+    - Lakhimpur_713_20_0.14928m.tif
+    - Lakhimpur_714_20_0.14928m.tif
+    - Lakhimpur_715_20_0.14928m.tif
+    - Lakhimpur_716_20_0.14928m.tif
+    - Lakhimpur_717_20_0.14928m.tif
+    - Lakhimpur_718_20_0.14928m.tif
+    - Lakhimpur_719_20_0.14928m.tif
+    - Lakhimpur_71_20_0.14928m.tif
+    - Lakhimpur_720_20_0.14928m.tif
+    - Lakhimpur_721_20_0.14928m.tif
+    - Lakhimpur_722_20_0.14928m.tif
+    - Lakhimpur_723_20_0.14928m.tif
+    - Lakhimpur_724_20_0.14928m.tif
+    - Lakhimpur_725_20_0.14928m.tif
+    - Lakhimpur_726_20_0.14928m.tif
+    - Lakhimpur_727_20_0.14928m.tif
+    - Lakhimpur_728_20_0.14928m.tif
+    - Lakhimpur_729_20_0.14928m.tif
+    - Lakhimpur_72_20_0.14928m.tif
+    - Lakhimpur_730_20_0.14928m.tif
+    - Lakhimpur_731_20_0.14928m.tif
+    - Lakhimpur_732_20_0.14928m.tif
+    - Lakhimpur_733_20_0.14928m.tif
+    - Lakhimpur_734_20_0.14928m.tif
+    - Lakhimpur_735_20_0.14928m.tif
+    - Lakhimpur_736_20_0.14928m.tif
+    - Lakhimpur_737_20_0.14928m.tif
+    - Lakhimpur_738_20_0.14928m.tif
+    - Lakhimpur_739_20_0.14928m.tif
+    - Lakhimpur_73_20_0.14928m.tif
+    - Lakhimpur_740_20_0.14928m.tif
+    - Lakhimpur_741_20_0.14928m.tif
+    - Lakhimpur_742_20_0.14928m.tif
+    - Lakhimpur_743_20_0.14928m.tif
+    - Lakhimpur_744_20_0.14928m.tif
+    - Lakhimpur_745_20_0.14928m.tif
+    - Lakhimpur_746_20_0.14928m.tif
+    - Lakhimpur_747_20_0.14928m.tif
+    - Lakhimpur_748_20_0.14928m.tif
+    - Lakhimpur_749_20_0.14928m.tif
+    - Lakhimpur_74_20_0.14928m.tif
+    - Lakhimpur_750_20_0.14928m.tif
+    - Lakhimpur_751_20_0.14928m.tif
+    - Lakhimpur_752_20_0.14928m.tif
+    - Lakhimpur_753_20_0.14928m.tif
+    - Lakhimpur_754_20_0.14928m.tif
+    - Lakhimpur_755_20_0.14928m.tif
+    - Lakhimpur_756_20_0.14928m.tif
+    - Lakhimpur_757_20_0.14928m.tif
+    - Lakhimpur_758_20_0.14928m.tif
+    - Lakhimpur_759_20_0.14928m.tif
+    - Lakhimpur_75_20_0.14928m.tif
+    - Lakhimpur_760_20_0.14928m.tif
+    - Lakhimpur_761_20_0.14928m.tif
+    - Lakhimpur_762_20_0.14928m.tif
+    - Lakhimpur_763_20_0.14928m.tif
+    - Lakhimpur_764_20_0.14928m.tif
+    - Lakhimpur_765_20_0.14928m.tif
+    - Lakhimpur_766_20_0.14928m.tif
+    - Lakhimpur_767_20_0.14928m.tif
+    - Lakhimpur_768_20_0.14928m.tif
+    - Lakhimpur_769_20_0.14928m.tif
+    - Lakhimpur_76_20_0.14928m.tif
+    - Lakhimpur_770_20_0.14928m.tif
+    - Lakhimpur_771_20_0.14928m.tif
+    - Lakhimpur_772_20_0.14928m.tif
+    - Lakhimpur_773_20_0.14928m.tif
+    - Lakhimpur_774_20_0.14928m.tif
+    - Lakhimpur_775_20_0.14928m.tif
+    - Lakhimpur_776_20_0.14928m.tif
+    - Lakhimpur_777_20_0.14928m.tif
+    - Lakhimpur_778_20_0.14928m.tif
+    - Lakhimpur_779_20_0.14928m.tif
+    - Lakhimpur_77_20_0.14928m.tif
+    - Lakhimpur_780_20_0.14928m.tif
+    - Lakhimpur_781_20_0.14928m.tif
+    - Lakhimpur_782_20_0.14928m.tif
+    - Lakhimpur_783_20_0.14928m.tif
+    - Lakhimpur_784_20_0.14928m.tif
+    - Lakhimpur_785_20_0.14928m.tif
+    - Lakhimpur_786_20_0.14928m.tif
+    - Lakhimpur_787_20_0.14928m.tif
+    - Lakhimpur_788_20_0.14928m.tif
+    - Lakhimpur_789_20_0.14928m.tif
+    - Lakhimpur_78_20_0.14928m.tif
+    - Lakhimpur_790_20_0.14928m.tif
+    - Lakhimpur_791_20_0.14928m.tif
+    - Lakhimpur_792_20_0.14928m.tif
+    - Lakhimpur_793_20_0.14928m.tif
+    - Lakhimpur_794_20_0.14928m.tif
+    - Lakhimpur_795_20_0.14928m.tif
+    - Lakhimpur_796_20_0.14928m.tif
+    - Lakhimpur_797_20_0.14928m.tif
+    - Lakhimpur_798_20_0.14928m.tif
+    - Lakhimpur_799_20_0.14928m.tif
+    - Lakhimpur_79_20_0.14928m.tif
+    - Lakhimpur_7_20_0.14928m.tif
+    - Lakhimpur_800_20_0.14928m.tif
+    - Lakhimpur_801_20_0.14928m.tif
+    - Lakhimpur_802_20_0.14928m.tif
+    - Lakhimpur_803_20_0.14928m.tif
+    - Lakhimpur_804_20_0.14928m.tif
+    - Lakhimpur_805_20_0.14928m.tif
+    - Lakhimpur_806_20_0.14928m.tif
+    - Lakhimpur_807_20_0.14928m.tif
+    - Lakhimpur_808_20_0.14928m.tif
+    - Lakhimpur_809_20_0.14928m.tif
+    - Lakhimpur_80_20_0.14928m.tif
+    - Lakhimpur_810_20_0.14928m.tif
+    - Lakhimpur_811_20_0.14928m.tif
+    - Lakhimpur_812_20_0.14928m.tif
+    - Lakhimpur_813_20_0.14928m.tif
+    - Lakhimpur_814_20_0.14928m.tif
+    - Lakhimpur_815_20_0.14928m.tif
+    - Lakhimpur_816_20_0.14928m.tif
+    - Lakhimpur_817_20_0.14928m.tif
+    - Lakhimpur_818_20_0.14928m.tif
+    - Lakhimpur_819_20_0.14928m.tif
+    - Lakhimpur_81_20_0.14928m.tif
+    - Lakhimpur_820_20_0.14928m.tif
+    - Lakhimpur_821_20_0.14928m.tif
+    - Lakhimpur_822_20_0.14928m.tif
+    - Lakhimpur_823_20_0.14928m.tif
+    - Lakhimpur_824_20_0.14928m.tif
+    - Lakhimpur_825_20_0.14928m.tif
+    - Lakhimpur_826_20_0.14928m.tif
+    - Lakhimpur_827_20_0.14928m.tif
+    - Lakhimpur_828_20_0.14928m.tif
+    - Lakhimpur_829_20_0.14928m.tif
+    - Lakhimpur_82_20_0.14928m.tif
+    - Lakhimpur_830_20_0.14928m.tif
+    - Lakhimpur_831_20_0.14928m.tif
+    - Lakhimpur_832_20_0.14928m.tif
+    - Lakhimpur_833_20_0.14928m.tif
+    - Lakhimpur_834_20_0.14928m.tif
+    - Lakhimpur_835_20_0.14928m.tif
+    - Lakhimpur_836_20_0.14928m.tif
+    - Lakhimpur_837_20_0.14928m.tif
+    - Lakhimpur_838_20_0.14928m.tif
+    - Lakhimpur_839_20_0.14928m.tif
+    - Lakhimpur_83_20_0.14928m.tif
+    - Lakhimpur_840_20_0.14928m.tif
+    - Lakhimpur_841_20_0.14928m.tif
+    - Lakhimpur_842_20_0.14928m.tif
+    - Lakhimpur_843_20_0.14928m.tif
+    - Lakhimpur_844_20_0.14928m.tif
+    - Lakhimpur_845_20_0.14928m.tif
+    - Lakhimpur_846_20_0.14928m.tif
+    - Lakhimpur_847_20_0.14928m.tif
+    - Lakhimpur_848_20_0.14928m.tif
+    - Lakhimpur_849_20_0.14928m.tif
+    - Lakhimpur_84_20_0.14928m.tif
+    - Lakhimpur_850_20_0.14928m.tif
+    - Lakhimpur_851_20_0.14928m.tif
+    - Lakhimpur_852_20_0.14928m.tif
+    - Lakhimpur_853_20_0.14928m.tif
+    - Lakhimpur_854_20_0.14928m.tif
+    - Lakhimpur_855_20_0.14928m.tif
+    - Lakhimpur_856_20_0.14928m.tif
+    - Lakhimpur_857_20_0.14928m.tif
+    - Lakhimpur_858_20_0.14928m.tif
+    - Lakhimpur_859_20_0.14928m.tif
+    - Lakhimpur_85_20_0.14928m.tif
+    - Lakhimpur_860_20_0.14928m.tif
+    - Lakhimpur_861_20_0.14928m.tif
+    - Lakhimpur_862_20_0.14928m.tif
+    - Lakhimpur_863_20_0.14928m.tif
+    - Lakhimpur_864_20_0.14928m.tif
+    - Lakhimpur_865_20_0.14928m.tif
+    - Lakhimpur_866_20_0.14928m.tif
+    - Lakhimpur_867_20_0.14928m.tif
+    - Lakhimpur_868_20_0.14928m.tif
+    - Lakhimpur_869_20_0.14928m.tif
+    - Lakhimpur_86_20_0.14928m.tif
+    - Lakhimpur_870_20_0.14928m.tif
+    - Lakhimpur_871_20_0.14928m.tif
+    - Lakhimpur_872_20_0.14928m.tif
+    - Lakhimpur_873_20_0.14928m.tif
+    - Lakhimpur_874_20_0.14928m.tif
+    - Lakhimpur_875_20_0.14928m.tif
+    - Lakhimpur_876_20_0.14928m.tif
+    - Lakhimpur_877_20_0.14928m.tif
+    - Lakhimpur_878_20_0.14928m.tif
+    - Lakhimpur_879_20_0.14928m.tif
+    - Lakhimpur_87_20_0.14928m.tif
+    - Lakhimpur_880_20_0.14928m.tif
+    - Lakhimpur_881_20_0.14928m.tif
+    - Lakhimpur_882_20_0.14928m.tif
+    - Lakhimpur_883_20_0.14928m.tif
+    - Lakhimpur_884_20_0.14928m.tif
+    - Lakhimpur_885_20_0.14928m.tif
+    - Lakhimpur_886_20_0.14928m.tif
+    - Lakhimpur_887_20_0.14928m.tif
+    - Lakhimpur_888_20_0.14928m.tif
+    - Lakhimpur_889_20_0.14928m.tif
+    - Lakhimpur_88_20_0.14928m.tif
+    - Lakhimpur_890_20_0.14928m.tif
+    - Lakhimpur_891_20_0.14928m.tif
+    - Lakhimpur_892_20_0.14928m.tif
+    - Lakhimpur_893_20_0.14928m.tif
+    - Lakhimpur_894_20_0.14928m.tif
+    - Lakhimpur_895_20_0.14928m.tif
+    - Lakhimpur_896_20_0.14928m.tif
+    - Lakhimpur_897_20_0.14928m.tif
+    - Lakhimpur_898_20_0.14928m.tif
+    - Lakhimpur_899_20_0.14928m.tif
+    - Lakhimpur_89_20_0.14928m.tif
+    - Lakhimpur_8_20_0.14928m.tif
+    - Lakhimpur_900_20_0.14928m.tif
+    - Lakhimpur_901_20_0.14928m.tif
+    - Lakhimpur_902_20_0.14928m.tif
+    - Lakhimpur_903_20_0.14928m.tif
+    - Lakhimpur_904_20_0.14928m.tif
+    - Lakhimpur_905_20_0.14928m.tif
+    - Lakhimpur_906_20_0.14928m.tif
+    - Lakhimpur_907_20_0.14928m.tif
+    - Lakhimpur_908_20_0.14928m.tif
+    - Lakhimpur_909_20_0.14928m.tif
+    - Lakhimpur_90_20_0.14928m.tif
+    - Lakhimpur_910_20_0.14928m.tif
+    - Lakhimpur_911_20_0.14928m.tif
+    - Lakhimpur_912_20_0.14928m.tif
+    - Lakhimpur_913_20_0.14928m.tif
+    - Lakhimpur_914_20_0.14928m.tif
+    - Lakhimpur_915_20_0.14928m.tif
+    - Lakhimpur_916_20_0.14928m.tif
+    - Lakhimpur_917_20_0.14928m.tif
+    - Lakhimpur_918_20_0.14928m.tif
+    - Lakhimpur_919_20_0.14928m.tif
+    - Lakhimpur_91_20_0.14928m.tif
+    - Lakhimpur_920_20_0.14928m.tif
+    - Lakhimpur_921_20_0.14928m.tif
+    - Lakhimpur_922_20_0.14928m.tif
+    - Lakhimpur_923_20_0.14928m.tif
+    - Lakhimpur_924_20_0.14928m.tif
+    - Lakhimpur_925_20_0.14928m.tif
+    - Lakhimpur_926_20_0.14928m.tif
+    - Lakhimpur_927_20_0.14928m.tif
+    - Lakhimpur_928_20_0.14928m.tif
+    - Lakhimpur_929_20_0.14928m.tif
+    - Lakhimpur_92_20_0.14928m.tif
+    - Lakhimpur_930_20_0.14928m.tif
+    - Lakhimpur_931_20_0.14928m.tif
+    - Lakhimpur_932_20_0.14928m.tif
+    - Lakhimpur_933_20_0.14928m.tif
+    - Lakhimpur_934_20_0.14928m.tif
+    - Lakhimpur_935_20_0.14928m.tif
+    - Lakhimpur_936_20_0.14928m.tif
+    - Lakhimpur_937_20_0.14928m.tif
+    - Lakhimpur_938_20_0.14928m.tif
+    - Lakhimpur_939_20_0.14928m.tif
+    - Lakhimpur_93_20_0.14928m.tif
+    - Lakhimpur_940_20_0.14928m.tif
+    - Lakhimpur_941_20_0.14928m.tif
+    - Lakhimpur_942_20_0.14928m.tif
+    - Lakhimpur_943_20_0.14928m.tif
+    - Lakhimpur_944_20_0.14928m.tif
+    - Lakhimpur_945_20_0.14928m.tif
+    - Lakhimpur_946_20_0.14928m.tif
+    - Lakhimpur_947_20_0.14928m.tif
+    - Lakhimpur_948_20_0.14928m.tif
+    - Lakhimpur_949_20_0.14928m.tif
+    - Lakhimpur_94_20_0.14928m.tif
+    - Lakhimpur_950_20_0.14928m.tif
+    - Lakhimpur_951_20_0.14928m.tif
+    - Lakhimpur_952_20_0.14928m.tif
+    - Lakhimpur_953_20_0.14928m.tif
+    - Lakhimpur_954_20_0.14928m.tif
+    - Lakhimpur_955_20_0.14928m.tif
+    - Lakhimpur_956_20_0.14928m.tif
+    - Lakhimpur_957_20_0.14928m.tif
+    - Lakhimpur_958_20_0.14928m.tif
+    - Lakhimpur_959_20_0.14928m.tif
+    - Lakhimpur_95_20_0.14928m.tif
+    - Lakhimpur_960_20_0.14928m.tif
+    - Lakhimpur_961_20_0.14928m.tif
+    - Lakhimpur_962_20_0.14928m.tif
+    - Lakhimpur_963_20_0.14928m.tif
+    - Lakhimpur_964_20_0.14928m.tif
+    - Lakhimpur_965_20_0.14928m.tif
+    - Lakhimpur_966_20_0.14928m.tif
+    - Lakhimpur_967_20_0.14928m.tif
+    - Lakhimpur_968_20_0.14928m.tif
+    - Lakhimpur_969_20_0.14928m.tif
+    - Lakhimpur_96_20_0.14928m.tif
+    - Lakhimpur_970_20_0.14928m.tif
+    - Lakhimpur_971_20_0.14928m.tif
+    - Lakhimpur_972_20_0.14928m.tif
+    - Lakhimpur_973_20_0.14928m.tif
+    - Lakhimpur_974_20_0.14928m.tif
+    - Lakhimpur_975_20_0.14928m.tif
+    - Lakhimpur_976_20_0.14928m.tif
+    - Lakhimpur_977_20_0.14928m.tif
+    - Lakhimpur_978_20_0.14928m.tif
+    - Lakhimpur_979_20_0.14928m.tif
+    - Lakhimpur_97_20_0.14928m.tif
+    - Lakhimpur_980_20_0.14928m.tif
+    - Lakhimpur_981_20_0.14928m.tif
+    - Lakhimpur_982_20_0.14928m.tif
+    - Lakhimpur_983_20_0.14928m.tif
+    - Lakhimpur_984_20_0.14928m.tif
+    - Lakhimpur_985_20_0.14928m.tif
+    - Lakhimpur_986_20_0.14928m.tif
+    - Lakhimpur_987_20_0.14928m.tif
+    - Lakhimpur_988_20_0.14928m.tif
+    - Lakhimpur_989_20_0.14928m.tif
+    - Lakhimpur_98_20_0.14928m.tif
+    - Lakhimpur_990_20_0.14928m.tif
+    - Lakhimpur_991_20_0.14928m.tif
+    - Lakhimpur_992_20_0.14928m.tif
+    - Lakhimpur_993_20_0.14928m.tif
+    - Lakhimpur_994_20_0.14928m.tif
+    - Lakhimpur_995_20_0.14928m.tif
+    - Lakhimpur_996_20_0.14928m.tif
+    - Lakhimpur_997_20_0.14928m.tif
+    - Lakhimpur_998_20_0.14928m.tif
+    - Lakhimpur_999_20_0.14928m.tif
+    - Lakhimpur_99_20_0.14928m.tif
+    - Lakhimpur_9_20_0.14928m.tif
+============================================================
+
+============================================================
+STEP 5-10 : Inference  [1/1071]  Lakhimpur_1000_20_0.14928m.tif
+============================================================
+
+  [5a] Reading image: /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/Lakhimpur_Whole_Sat_Data/Lakhimpur/Lakhimpur_1000_20_0.14928m.tif
+       Size     : 13531 × 13531 px
+       Bands    : 3
+       CRS      : EPSG:3857
+       Dtype    : uint8
+  [5b] Normalising to [0,1]  (img_as_float scaling)
+  [5c] Padded size: 13824 × 13824  (729 tiles of 512×512)
+  [5d] Running tile inference on device: cuda
+       729 tiles processed.
+  [5e] Reconstructing full prediction map (19 classes)
+  [6]  Saving 19-class prediction → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED19_Lakhimpur_1000_20_0.14928m.tif
+
+  [7]  Pixel statistics for: Lakhimpur_1000_20_0.14928m.tif
+
+  --- 19-Class Pixel Counts ---
+  Class  Name                         Active        Pixels   Percent
+  -----------------------------------------------------------------
+   0  building                        yes         2,054    0.001%
+   1  pervious surface                yes       462,303    0.253%
+   2  impervious surface              yes        28,611    0.016%
+   3  bare soil                       yes     7,175,584    3.919%
+   4  water                           yes   173,228,103   94.615%
+   5  coniferous                      yes             0    0.000%
+   6  deciduous                       yes             1    0.000%
+   7  brushwood                       yes             0    0.000%
+   8  vineyard                        yes             0    0.000%
+   9  herbaceous vegetation           yes     2,141,015    1.169%
+  10  agricultural land               yes        49,786    0.027%
+  11  plowed land                     yes           504    0.000%
+  12  swimming pool                   yes             0    0.000%
+  13  snow                            yes             0    0.000%
+  14  clear cut                        no             0    0.000%
+  15  mixed                            no             0    0.000%
+  16  ligneous                         no             0    0.000%
+  17  greenhouse                      yes             0    0.000%
+  18  other                            no             0    0.000%
+      TOTAL                                 183,087,961  100.000%
+
+  [8]  Reclassifying 19 classes → 3 classes
+       Mapping:
+          0 building                  → 1 Land
+          1 pervious surface          → 1 Land
+          2 impervious surface        → 1 Land
+          3 bare soil                 → 1 Land
+          4 water                     → 0 Water bodies
+          5 coniferous                → 2 Vegetation
+          6 deciduous                 → 2 Vegetation
+          7 brushwood                 → 2 Vegetation
+          8 vineyard                  → 2 Vegetation
+          9 herbaceous vegetation     → 2 Vegetation
+         10 agricultural land         → 2 Vegetation
+         11 plowed land               → 1 Land
+         12 swimming pool             → 0 Water bodies
+         13 snow                      → 1 Land
+         14 clear cut                 → 2 Vegetation
+         15 mixed                     → 2 Vegetation
+         16 ligneous                  → 2 Vegetation
+         17 greenhouse                → 1 Land
+         18 other                     → 1 Land
+
+  [9]  Saving 3-class prediction  → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED3_Lakhimpur_1000_20_0.14928m.tif
+
+  [10] 3-Class statistics for: Lakhimpur_1000_20_0.14928m.tif
+
+  --- 3-Class Pixel Counts (after reclassification) ---
+  Class  Name                        Pixels   Percent
+  --------------------------------------------------
+      0  Water bodies           173,228,103   94.615%
+      1  Land                     7,669,056    4.189%
+      2  Vegetation               2,190,802    1.197%
+         TOTAL                  183,087,961  100.000%
+
+============================================================
+STEP 5-10 : Inference  [2/1071]  Lakhimpur_1001_20_0.14928m.tif
+============================================================
+
+  [5a] Reading image: /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/Lakhimpur_Whole_Sat_Data/Lakhimpur/Lakhimpur_1001_20_0.14928m.tif
+       Size     : 13531 × 13531 px
+       Bands    : 3
+       CRS      : EPSG:3857
+       Dtype    : uint8
+  [5b] Normalising to [0,1]  (img_as_float scaling)
+  [5c] Padded size: 13824 × 13824  (729 tiles of 512×512)
+  [5d] Running tile inference on device: cuda
+       729 tiles processed.
+  [5e] Reconstructing full prediction map (19 classes)
+  [6]  Saving 19-class prediction → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED19_Lakhimpur_1001_20_0.14928m.tif
+
+  [7]  Pixel statistics for: Lakhimpur_1001_20_0.14928m.tif
+
+  --- 19-Class Pixel Counts ---
+  Class  Name                         Active        Pixels   Percent
+  -----------------------------------------------------------------
+   0  building                        yes           467    0.000%
+   1  pervious surface                yes       766,219    0.418%
+   2  impervious surface              yes        40,773    0.022%
+   3  bare soil                       yes    14,189,463    7.750%
+   4  water                           yes   163,554,189   89.331%
+   5  coniferous                      yes             0    0.000%
+   6  deciduous                       yes             2    0.000%
+   7  brushwood                       yes             0    0.000%
+   8  vineyard                        yes             0    0.000%
+   9  herbaceous vegetation           yes     3,389,314    1.851%
+  10  agricultural land               yes       684,545    0.374%
+  11  plowed land                     yes       462,989    0.253%
+  12  swimming pool                   yes             0    0.000%
+  13  snow                            yes             0    0.000%
+  14  clear cut                        no             0    0.000%
+  15  mixed                            no             0    0.000%
+  16  ligneous                         no             0    0.000%
+  17  greenhouse                      yes             0    0.000%
+  18  other                            no             0    0.000%
+      TOTAL                                 183,087,961  100.000%
+
+  [8]  Reclassifying 19 classes → 3 classes
+       Mapping:
+          0 building                  → 1 Land
+          1 pervious surface          → 1 Land
+          2 impervious surface        → 1 Land
+          3 bare soil                 → 1 Land
+          4 water                     → 0 Water bodies
+          5 coniferous                → 2 Vegetation
+          6 deciduous                 → 2 Vegetation
+          7 brushwood                 → 2 Vegetation
+          8 vineyard                  → 2 Vegetation
+          9 herbaceous vegetation     → 2 Vegetation
+         10 agricultural land         → 2 Vegetation
+         11 plowed land               → 1 Land
+         12 swimming pool             → 0 Water bodies
+         13 snow                      → 1 Land
+         14 clear cut                 → 2 Vegetation
+         15 mixed                     → 2 Vegetation
+         16 ligneous                  → 2 Vegetation
+         17 greenhouse                → 1 Land
+         18 other                     → 1 Land
+
+  [9]  Saving 3-class prediction  → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED3_Lakhimpur_1001_20_0.14928m.tif
+
+  [10] 3-Class statistics for: Lakhimpur_1001_20_0.14928m.tif
+
+  --- 3-Class Pixel Counts (after reclassification) ---
+  Class  Name                        Pixels   Percent
+  --------------------------------------------------
+      0  Water bodies           163,554,189   89.331%
+      1  Land                    15,459,911    8.444%
+      2  Vegetation               4,073,861    2.225%
+         TOTAL                  183,087,961  100.000%
+
+============================================================
+STEP 5-10 : Inference  [3/1071]  Lakhimpur_1002_20_0.14928m.tif
+============================================================
+
+  [5a] Reading image: /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/Lakhimpur_Whole_Sat_Data/Lakhimpur/Lakhimpur_1002_20_0.14928m.tif
+       Size     : 13531 × 13531 px
+       Bands    : 3
+       CRS      : EPSG:3857
+       Dtype    : uint8
+  [5b] Normalising to [0,1]  (img_as_float scaling)
+  [5c] Padded size: 13824 × 13824  (729 tiles of 512×512)
+  [5d] Running tile inference on device: cuda
+       729 tiles processed.
+  [5e] Reconstructing full prediction map (19 classes)
+  [6]  Saving 19-class prediction → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED19_Lakhimpur_1002_20_0.14928m.tif
+
+  [7]  Pixel statistics for: Lakhimpur_1002_20_0.14928m.tif
+
+  --- 19-Class Pixel Counts ---
+  Class  Name                         Active        Pixels   Percent
+  -----------------------------------------------------------------
+   0  building                        yes        11,963    0.007%
+   1  pervious surface                yes       411,676    0.225%
+   2  impervious surface              yes        16,381    0.009%
+   3  bare soil                       yes     3,621,398    1.978%
+   4  water                           yes   176,148,088   96.210%
+   5  coniferous                      yes             0    0.000%
+   6  deciduous                       yes             5    0.000%
+   7  brushwood                       yes           166    0.000%
+   8  vineyard                        yes             0    0.000%
+   9  herbaceous vegetation           yes     2,477,842    1.353%
+  10  agricultural land               yes       328,962    0.180%
+  11  plowed land                     yes        71,480    0.039%
+  12  swimming pool                   yes             0    0.000%
+  13  snow                            yes             0    0.000%
+  14  clear cut                        no             0    0.000%
+  15  mixed                            no             0    0.000%
+  16  ligneous                         no             0    0.000%
+  17  greenhouse                      yes             0    0.000%
+  18  other                            no             0    0.000%
+      TOTAL                                 183,087,961  100.000%
+
+  [8]  Reclassifying 19 classes → 3 classes
+       Mapping:
+          0 building                  → 1 Land
+          1 pervious surface          → 1 Land
+          2 impervious surface        → 1 Land
+          3 bare soil                 → 1 Land
+          4 water                     → 0 Water bodies
+          5 coniferous                → 2 Vegetation
+          6 deciduous                 → 2 Vegetation
+          7 brushwood                 → 2 Vegetation
+          8 vineyard                  → 2 Vegetation
+          9 herbaceous vegetation     → 2 Vegetation
+         10 agricultural land         → 2 Vegetation
+         11 plowed land               → 1 Land
+         12 swimming pool             → 0 Water bodies
+         13 snow                      → 1 Land
+         14 clear cut                 → 2 Vegetation
+         15 mixed                     → 2 Vegetation
+         16 ligneous                  → 2 Vegetation
+         17 greenhouse                → 1 Land
+         18 other                     → 1 Land
+
+  [9]  Saving 3-class prediction  → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED3_Lakhimpur_1002_20_0.14928m.tif
+
+  [10] 3-Class statistics for: Lakhimpur_1002_20_0.14928m.tif
+
+  --- 3-Class Pixel Counts (after reclassification) ---
+  Class  Name                        Pixels   Percent
+  --------------------------------------------------
+      0  Water bodies           176,148,088   96.210%
+      1  Land                     4,132,898    2.257%
+      2  Vegetation               2,806,975    1.533%
+         TOTAL                  183,087,961  100.000%
+
+============================================================
+STEP 5-10 : Inference  [4/1071]  Lakhimpur_1003_20_0.14928m.tif
+============================================================
+
+  [5a] Reading image: /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/Lakhimpur_Whole_Sat_Data/Lakhimpur/Lakhimpur_1003_20_0.14928m.tif
+       Size     : 13531 × 13531 px
+       Bands    : 3
+       CRS      : EPSG:3857
+       Dtype    : uint8
+  [5b] Normalising to [0,1]  (img_as_float scaling)
+  [5c] Padded size: 13824 × 13824  (729 tiles of 512×512)
+  [5d] Running tile inference on device: cuda
+       729 tiles processed.
+  [5e] Reconstructing full prediction map (19 classes)
+  [6]  Saving 19-class prediction → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED19_Lakhimpur_1003_20_0.14928m.tif
+
+  [7]  Pixel statistics for: Lakhimpur_1003_20_0.14928m.tif
+
+  --- 19-Class Pixel Counts ---
+  Class  Name                         Active        Pixels   Percent
+  -----------------------------------------------------------------
+   0  building                        yes        26,753    0.015%
+   1  pervious surface                yes       123,538    0.067%
+   2  impervious surface              yes        55,363    0.030%
+   3  bare soil                       yes     3,205,950    1.751%
+   4  water                           yes   176,652,321   96.485%
+   5  coniferous                      yes             0    0.000%
+   6  deciduous                       yes             2    0.000%
+   7  brushwood                       yes             0    0.000%
+   8  vineyard                        yes             0    0.000%
+   9  herbaceous vegetation           yes     1,317,175    0.719%
+  10  agricultural land               yes     1,472,338    0.804%
+  11  plowed land                     yes       234,521    0.128%
+  12  swimming pool                   yes             0    0.000%
+  13  snow                            yes             0    0.000%
+  14  clear cut                        no             0    0.000%
+  15  mixed                            no             0    0.000%
+  16  ligneous                         no             0    0.000%
+  17  greenhouse                      yes             0    0.000%
+  18  other                            no             0    0.000%
+      TOTAL                                 183,087,961  100.000%
+
+  [8]  Reclassifying 19 classes → 3 classes
+       Mapping:
+          0 building                  → 1 Land
+          1 pervious surface          → 1 Land
+          2 impervious surface        → 1 Land
+          3 bare soil                 → 1 Land
+          4 water                     → 0 Water bodies
+          5 coniferous                → 2 Vegetation
+          6 deciduous                 → 2 Vegetation
+          7 brushwood                 → 2 Vegetation
+          8 vineyard                  → 2 Vegetation
+          9 herbaceous vegetation     → 2 Vegetation
+         10 agricultural land         → 2 Vegetation
+         11 plowed land               → 1 Land
+         12 swimming pool             → 0 Water bodies
+         13 snow                      → 1 Land
+         14 clear cut                 → 2 Vegetation
+         15 mixed                     → 2 Vegetation
+         16 ligneous                  → 2 Vegetation
+         17 greenhouse                → 1 Land
+         18 other                     → 1 Land
+
+  [9]  Saving 3-class prediction  → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED3_Lakhimpur_1003_20_0.14928m.tif
+
+  [10] 3-Class statistics for: Lakhimpur_1003_20_0.14928m.tif
+
+  --- 3-Class Pixel Counts (after reclassification) ---
+  Class  Name                        Pixels   Percent
+  --------------------------------------------------
+      0  Water bodies           176,652,321   96.485%
+      1  Land                     3,646,125    1.991%
+      2  Vegetation               2,789,515    1.524%
+         TOTAL                  183,087,961  100.000%
+
+============================================================
+STEP 5-10 : Inference  [5/1071]  Lakhimpur_1004_20_0.14928m.tif
+============================================================
+
+  [5a] Reading image: /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/Lakhimpur_Whole_Sat_Data/Lakhimpur/Lakhimpur_1004_20_0.14928m.tif
+       Size     : 13531 × 13531 px
+       Bands    : 3
+       CRS      : EPSG:3857
+       Dtype    : uint8
+  [5b] Normalising to [0,1]  (img_as_float scaling)
+  [5c] Padded size: 13824 × 13824  (729 tiles of 512×512)
+  [5d] Running tile inference on device: cuda
+       729 tiles processed.
+  [5e] Reconstructing full prediction map (19 classes)
+  [6]  Saving 19-class prediction → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED19_Lakhimpur_1004_20_0.14928m.tif
+
+  [7]  Pixel statistics for: Lakhimpur_1004_20_0.14928m.tif
+
+  --- 19-Class Pixel Counts ---
+  Class  Name                         Active        Pixels   Percent
+  -----------------------------------------------------------------
+   0  building                        yes         1,314    0.001%
+   1  pervious surface                yes       443,740    0.242%
+   2  impervious surface              yes         5,237    0.003%
+   3  bare soil                       yes    10,024,553    5.475%
+   4  water                           yes   168,601,735   92.088%
+   5  coniferous                      yes             0    0.000%
+   6  deciduous                       yes           913    0.000%
+   7  brushwood                       yes             0    0.000%
+   8  vineyard                        yes             0    0.000%
+   9  herbaceous vegetation           yes     3,145,324    1.718%
+  10  agricultural land               yes       667,171    0.364%
+  11  plowed land                     yes       197,974    0.108%
+  12  swimming pool                   yes             0    0.000%
+  13  snow                            yes             0    0.000%
+  14  clear cut                        no             0    0.000%
+  15  mixed                            no             0    0.000%
+  16  ligneous                         no             0    0.000%
+  17  greenhouse                      yes             0    0.000%
+  18  other                            no             0    0.000%
+      TOTAL                                 183,087,961  100.000%
+
+  [8]  Reclassifying 19 classes → 3 classes
+       Mapping:
+          0 building                  → 1 Land
+          1 pervious surface          → 1 Land
+          2 impervious surface        → 1 Land
+          3 bare soil                 → 1 Land
+          4 water                     → 0 Water bodies
+          5 coniferous                → 2 Vegetation
+          6 deciduous                 → 2 Vegetation
+          7 brushwood                 → 2 Vegetation
+          8 vineyard                  → 2 Vegetation
+          9 herbaceous vegetation     → 2 Vegetation
+         10 agricultural land         → 2 Vegetation
+         11 plowed land               → 1 Land
+         12 swimming pool             → 0 Water bodies
+         13 snow                      → 1 Land
+         14 clear cut                 → 2 Vegetation
+         15 mixed                     → 2 Vegetation
+         16 ligneous                  → 2 Vegetation
+         17 greenhouse                → 1 Land
+         18 other                     → 1 Land
+
+  [9]  Saving 3-class prediction  → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED3_Lakhimpur_1004_20_0.14928m.tif
+
+  [10] 3-Class statistics for: Lakhimpur_1004_20_0.14928m.tif
+
+  --- 3-Class Pixel Counts (after reclassification) ---
+  Class  Name                        Pixels   Percent
+  --------------------------------------------------
+      0  Water bodies           168,601,735   92.088%
+      1  Land                    10,672,818    5.829%
+      2  Vegetation               3,813,408    2.083%
+         TOTAL                  183,087,961  100.000%
+
+============================================================
+STEP 5-10 : Inference  [6/1071]  Lakhimpur_1005_20_0.14928m.tif
+============================================================
+
+  [5a] Reading image: /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/Lakhimpur_Whole_Sat_Data/Lakhimpur/Lakhimpur_1005_20_0.14928m.tif
+       Size     : 13531 × 13531 px
+       Bands    : 3
+       CRS      : EPSG:3857
+       Dtype    : uint8
+  [5b] Normalising to [0,1]  (img_as_float scaling)
+  [5c] Padded size: 13824 × 13824  (729 tiles of 512×512)
+  [5d] Running tile inference on device: cuda
+       729 tiles processed.
+  [5e] Reconstructing full prediction map (19 classes)
+  [6]  Saving 19-class prediction → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED19_Lakhimpur_1005_20_0.14928m.tif
+
+  [7]  Pixel statistics for: Lakhimpur_1005_20_0.14928m.tif
+
+  --- 19-Class Pixel Counts ---
+  Class  Name                         Active        Pixels   Percent
+  -----------------------------------------------------------------
+   0  building                        yes         6,701    0.004%
+   1  pervious surface                yes     3,519,033    1.922%
+   2  impervious surface              yes        19,637    0.011%
+   3  bare soil                       yes    22,945,925   12.533%
+   4  water                           yes   151,619,951   82.813%
+   5  coniferous                      yes             0    0.000%
+   6  deciduous                       yes           267    0.000%
+   7  brushwood                       yes           105    0.000%
+   8  vineyard                        yes         2,255    0.001%
+   9  herbaceous vegetation           yes     3,941,361    2.153%
+  10  agricultural land               yes       861,008    0.470%
+  11  plowed land                     yes       171,704    0.094%
+  12  swimming pool                   yes            14    0.000%
+  13  snow                            yes             0    0.000%
+  14  clear cut                        no             0    0.000%
+  15  mixed                            no             0    0.000%
+  16  ligneous                         no             0    0.000%
+  17  greenhouse                      yes             0    0.000%
+  18  other                            no             0    0.000%
+      TOTAL                                 183,087,961  100.000%
+
+  [8]  Reclassifying 19 classes → 3 classes
+       Mapping:
+          0 building                  → 1 Land
+          1 pervious surface          → 1 Land
+          2 impervious surface        → 1 Land
+          3 bare soil                 → 1 Land
+          4 water                     → 0 Water bodies
+          5 coniferous                → 2 Vegetation
+          6 deciduous                 → 2 Vegetation
+          7 brushwood                 → 2 Vegetation
+          8 vineyard                  → 2 Vegetation
+          9 herbaceous vegetation     → 2 Vegetation
+         10 agricultural land         → 2 Vegetation
+         11 plowed land               → 1 Land
+         12 swimming pool             → 0 Water bodies
+         13 snow                      → 1 Land
+         14 clear cut                 → 2 Vegetation
+         15 mixed                     → 2 Vegetation
+         16 ligneous                  → 2 Vegetation
+         17 greenhouse                → 1 Land
+         18 other                     → 1 Land
+
+  [9]  Saving 3-class prediction  → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED3_Lakhimpur_1005_20_0.14928m.tif
+
+  [10] 3-Class statistics for: Lakhimpur_1005_20_0.14928m.tif
+
+  --- 3-Class Pixel Counts (after reclassification) ---
+  Class  Name                        Pixels   Percent
+  --------------------------------------------------
+      0  Water bodies           151,619,965   82.813%
+      1  Land                    26,663,000   14.563%
+      2  Vegetation               4,804,996    2.624%
+         TOTAL                  183,087,961  100.000%
+
+============================================================
+STEP 5-10 : Inference  [7/1071]  Lakhimpur_1006_20_0.14928m.tif
+============================================================
+
+  [5a] Reading image: /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/Lakhimpur_Whole_Sat_Data/Lakhimpur/Lakhimpur_1006_20_0.14928m.tif
+       Size     : 13531 × 13531 px
+       Bands    : 3
+       CRS      : EPSG:3857
+       Dtype    : uint8
+  [5b] Normalising to [0,1]  (img_as_float scaling)
+  [5c] Padded size: 13824 × 13824  (729 tiles of 512×512)
+  [5d] Running tile inference on device: cuda
+       729 tiles processed.
+  [5e] Reconstructing full prediction map (19 classes)
+  [6]  Saving 19-class prediction → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED19_Lakhimpur_1006_20_0.14928m.tif
+
+  [7]  Pixel statistics for: Lakhimpur_1006_20_0.14928m.tif
+
+  --- 19-Class Pixel Counts ---
+  Class  Name                         Active        Pixels   Percent
+  -----------------------------------------------------------------
+   0  building                        yes        11,002    0.006%
+   1  pervious surface                yes     9,827,319    5.368%
+   2  impervious surface              yes        24,936    0.014%
+   3  bare soil                       yes    44,967,561   24.561%
+   4  water                           yes   119,344,577   65.184%
+   5  coniferous                      yes             0    0.000%
+   6  deciduous                       yes            83    0.000%
+   7  brushwood                       yes         1,230    0.001%
+   8  vineyard                        yes        35,460    0.019%
+   9  herbaceous vegetation           yes     5,441,793    2.972%
+  10  agricultural land               yes     2,544,950    1.390%
+  11  plowed land                     yes       883,766    0.483%
+  12  swimming pool                   yes             1    0.000%
+  13  snow                            yes           279    0.000%
+  14  clear cut                        no             0    0.000%
+  15  mixed                            no             0    0.000%
+  16  ligneous                         no             0    0.000%
+  17  greenhouse                      yes         5,004    0.003%
+  18  other                            no             0    0.000%
+      TOTAL                                 183,087,961  100.000%
+
+  [8]  Reclassifying 19 classes → 3 classes
+       Mapping:
+          0 building                  → 1 Land
+          1 pervious surface          → 1 Land
+          2 impervious surface        → 1 Land
+          3 bare soil                 → 1 Land
+          4 water                     → 0 Water bodies
+          5 coniferous                → 2 Vegetation
+          6 deciduous                 → 2 Vegetation
+          7 brushwood                 → 2 Vegetation
+          8 vineyard                  → 2 Vegetation
+          9 herbaceous vegetation     → 2 Vegetation
+         10 agricultural land         → 2 Vegetation
+         11 plowed land               → 1 Land
+         12 swimming pool             → 0 Water bodies
+         13 snow                      → 1 Land
+         14 clear cut                 → 2 Vegetation
+         15 mixed                     → 2 Vegetation
+         16 ligneous                  → 2 Vegetation
+         17 greenhouse                → 1 Land
+         18 other                     → 1 Land
+
+  [9]  Saving 3-class prediction  → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED3_Lakhimpur_1006_20_0.14928m.tif
+
+  [10] 3-Class statistics for: Lakhimpur_1006_20_0.14928m.tif
+
+  --- 3-Class Pixel Counts (after reclassification) ---
+  Class  Name                        Pixels   Percent
+  --------------------------------------------------
+      0  Water bodies           119,344,578   65.184%
+      1  Land                    55,719,867   30.433%
+      2  Vegetation               8,023,516    4.382%
+         TOTAL                  183,087,961  100.000%
+
+============================================================
+STEP 5-10 : Inference  [8/1071]  Lakhimpur_1007_20_0.14928m.tif
+============================================================
+
+  [5a] Reading image: /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/Lakhimpur_Whole_Sat_Data/Lakhimpur/Lakhimpur_1007_20_0.14928m.tif
+       Size     : 13531 × 13531 px
+       Bands    : 3
+       CRS      : EPSG:3857
+       Dtype    : uint8
+  [5b] Normalising to [0,1]  (img_as_float scaling)
+  [5c] Padded size: 13824 × 13824  (729 tiles of 512×512)
+  [5d] Running tile inference on device: cuda
+       729 tiles processed.
+  [5e] Reconstructing full prediction map (19 classes)
+  [6]  Saving 19-class prediction → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED19_Lakhimpur_1007_20_0.14928m.tif
+
+  [7]  Pixel statistics for: Lakhimpur_1007_20_0.14928m.tif
+
+  --- 19-Class Pixel Counts ---
+  Class  Name                         Active        Pixels   Percent
+  -----------------------------------------------------------------
+   0  building                        yes       115,229    0.063%
+   1  pervious surface                yes    12,475,492    6.814%
+   2  impervious surface              yes       185,626    0.101%
+   3  bare soil                       yes    41,531,980   22.684%
+   4  water                           yes   123,228,772   67.306%
+   5  coniferous                      yes             0    0.000%
+   6  deciduous                       yes           664    0.000%
+   7  brushwood                       yes             3    0.000%
+   8  vineyard                        yes             0    0.000%
+   9  herbaceous vegetation           yes     3,937,308    2.151%
+  10  agricultural land               yes       692,948    0.378%
+  11  plowed land                     yes       919,332    0.502%
+  12  swimming pool                   yes           607    0.000%
+  13  snow                            yes             0    0.000%
+  14  clear cut                        no             0    0.000%
+  15  mixed                            no             0    0.000%
+  16  ligneous                         no             0    0.000%
+  17  greenhouse                      yes             0    0.000%
+  18  other                            no             0    0.000%
+      TOTAL                                 183,087,961  100.000%
+
+  [8]  Reclassifying 19 classes → 3 classes
+       Mapping:
+          0 building                  → 1 Land
+          1 pervious surface          → 1 Land
+          2 impervious surface        → 1 Land
+          3 bare soil                 → 1 Land
+          4 water                     → 0 Water bodies
+          5 coniferous                → 2 Vegetation
+          6 deciduous                 → 2 Vegetation
+          7 brushwood                 → 2 Vegetation
+          8 vineyard                  → 2 Vegetation
+          9 herbaceous vegetation     → 2 Vegetation
+         10 agricultural land         → 2 Vegetation
+         11 plowed land               → 1 Land
+         12 swimming pool             → 0 Water bodies
+         13 snow                      → 1 Land
+         14 clear cut                 → 2 Vegetation
+         15 mixed                     → 2 Vegetation
+         16 ligneous                  → 2 Vegetation
+         17 greenhouse                → 1 Land
+         18 other                     → 1 Land
+
+  [9]  Saving 3-class prediction  → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED3_Lakhimpur_1007_20_0.14928m.tif
+
+  [10] 3-Class statistics for: Lakhimpur_1007_20_0.14928m.tif
+
+  --- 3-Class Pixel Counts (after reclassification) ---
+  Class  Name                        Pixels   Percent
+  --------------------------------------------------
+      0  Water bodies           123,229,379   67.306%
+      1  Land                    55,227,659   30.165%
+      2  Vegetation               4,630,923    2.529%
+         TOTAL                  183,087,961  100.000%
+
+============================================================
+STEP 5-10 : Inference  [9/1071]  Lakhimpur_1008_20_0.14928m.tif
+============================================================
+
+  [5a] Reading image: /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/Lakhimpur_Whole_Sat_Data/Lakhimpur/Lakhimpur_1008_20_0.14928m.tif
+       Size     : 13531 × 13531 px
+       Bands    : 3
+       CRS      : EPSG:3857
+       Dtype    : uint8
+  [5b] Normalising to [0,1]  (img_as_float scaling)
+  [5c] Padded size: 13824 × 13824  (729 tiles of 512×512)
+  [5d] Running tile inference on device: cuda
+       729 tiles processed.
+  [5e] Reconstructing full prediction map (19 classes)
+  [6]  Saving 19-class prediction → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED19_Lakhimpur_1008_20_0.14928m.tif
+
+  [7]  Pixel statistics for: Lakhimpur_1008_20_0.14928m.tif
+
+  --- 19-Class Pixel Counts ---
+  Class  Name                         Active        Pixels   Percent
+  -----------------------------------------------------------------
+   0  building                        yes         9,588    0.005%
+   1  pervious surface                yes    21,591,946   11.793%
+   2  impervious surface              yes        75,698    0.041%
+   3  bare soil                       yes    41,063,717   22.428%
+   4  water                           yes   108,743,017   59.394%
+   5  coniferous                      yes            21    0.000%
+   6  deciduous                       yes             6    0.000%
+   7  brushwood                       yes           573    0.000%
+   8  vineyard                        yes         1,543    0.001%
+   9  herbaceous vegetation           yes     6,192,393    3.382%
+  10  agricultural land               yes     4,883,697    2.667%
+  11  plowed land                     yes       524,766    0.287%
+  12  swimming pool                   yes             0    0.000%
+  13  snow                            yes           627    0.000%
+  14  clear cut                        no             0    0.000%
+  15  mixed                            no             0    0.000%
+  16  ligneous                         no             0    0.000%
+  17  greenhouse                      yes           369    0.000%
+  18  other                            no             0    0.000%
+      TOTAL                                 183,087,961  100.000%
+
+  [8]  Reclassifying 19 classes → 3 classes
+       Mapping:
+          0 building                  → 1 Land
+          1 pervious surface          → 1 Land
+          2 impervious surface        → 1 Land
+          3 bare soil                 → 1 Land
+          4 water                     → 0 Water bodies
+          5 coniferous                → 2 Vegetation
+          6 deciduous                 → 2 Vegetation
+          7 brushwood                 → 2 Vegetation
+          8 vineyard                  → 2 Vegetation
+          9 herbaceous vegetation     → 2 Vegetation
+         10 agricultural land         → 2 Vegetation
+         11 plowed land               → 1 Land
+         12 swimming pool             → 0 Water bodies
+         13 snow                      → 1 Land
+         14 clear cut                 → 2 Vegetation
+         15 mixed                     → 2 Vegetation
+         16 ligneous                  → 2 Vegetation
+         17 greenhouse                → 1 Land
+         18 other                     → 1 Land
+
+  [9]  Saving 3-class prediction  → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED3_Lakhimpur_1008_20_0.14928m.tif
+
+  [10] 3-Class statistics for: Lakhimpur_1008_20_0.14928m.tif
+
+  --- 3-Class Pixel Counts (after reclassification) ---
+  Class  Name                        Pixels   Percent
+  --------------------------------------------------
+      0  Water bodies           108,743,017   59.394%
+      1  Land                    63,266,711   34.555%
+      2  Vegetation              11,078,233    6.051%
+         TOTAL                  183,087,961  100.000%
+
+============================================================
+STEP 5-10 : Inference  [10/1071]  Lakhimpur_1009_20_0.14928m.tif
+============================================================
+
+  [5a] Reading image: /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/Lakhimpur_Whole_Sat_Data/Lakhimpur/Lakhimpur_1009_20_0.14928m.tif
+       Size     : 13531 × 13531 px
+       Bands    : 3
+       CRS      : EPSG:3857
+       Dtype    : uint8
+  [5b] Normalising to [0,1]  (img_as_float scaling)
+  [5c] Padded size: 13824 × 13824  (729 tiles of 512×512)
+  [5d] Running tile inference on device: cuda
+       729 tiles processed.
+  [5e] Reconstructing full prediction map (19 classes)
+  [6]  Saving 19-class prediction → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED19_Lakhimpur_1009_20_0.14928m.tif
+
+  [7]  Pixel statistics for: Lakhimpur_1009_20_0.14928m.tif
+
+  --- 19-Class Pixel Counts ---
+  Class  Name                         Active        Pixels   Percent
+  -----------------------------------------------------------------
+   0  building                        yes       276,467    0.151%
+   1  pervious surface                yes     9,914,876    5.415%
+   2  impervious surface              yes        80,377    0.044%
+   3  bare soil                       yes    33,377,511   18.230%
+   4  water                           yes   123,316,349   67.354%
+   5  coniferous                      yes             0    0.000%
+   6  deciduous                       yes         1,871    0.001%
+   7  brushwood                       yes         3,554    0.002%
+   8  vineyard                        yes        10,974    0.006%
+   9  herbaceous vegetation           yes     8,549,589    4.670%
+  10  agricultural land               yes     7,053,550    3.853%
+  11  plowed land                     yes       476,645    0.260%
+  12  swimming pool                   yes             0    0.000%
+  13  snow                            yes            87    0.000%
+  14  clear cut                        no             0    0.000%
+  15  mixed                            no             0    0.000%
+  16  ligneous                         no             0    0.000%
+  17  greenhouse                      yes        26,111    0.014%
+  18  other                            no             0    0.000%
+      TOTAL                                 183,087,961  100.000%
+
+  [8]  Reclassifying 19 classes → 3 classes
+       Mapping:
+          0 building                  → 1 Land
+          1 pervious surface          → 1 Land
+          2 impervious surface        → 1 Land
+          3 bare soil                 → 1 Land
+          4 water                     → 0 Water bodies
+          5 coniferous                → 2 Vegetation
+          6 deciduous                 → 2 Vegetation
+          7 brushwood                 → 2 Vegetation
+          8 vineyard                  → 2 Vegetation
+          9 herbaceous vegetation     → 2 Vegetation
+         10 agricultural land         → 2 Vegetation
+         11 plowed land               → 1 Land
+         12 swimming pool             → 0 Water bodies
+         13 snow                      → 1 Land
+         14 clear cut                 → 2 Vegetation
+         15 mixed                     → 2 Vegetation
+         16 ligneous                  → 2 Vegetation
+         17 greenhouse                → 1 Land
+         18 other                     → 1 Land
+
+  [9]  Saving 3-class prediction  → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED3_Lakhimpur_1009_20_0.14928m.tif
+
+  [10] 3-Class statistics for: Lakhimpur_1009_20_0.14928m.tif
+
+  --- 3-Class Pixel Counts (after reclassification) ---
+  Class  Name                        Pixels   Percent
+  --------------------------------------------------
+      0  Water bodies           123,316,349   67.354%
+      1  Land                    44,152,074   24.115%
+      2  Vegetation              15,619,538    8.531%
+         TOTAL                  183,087,961  100.000%
+
+============================================================
+STEP 5-10 : Inference  [11/1071]  Lakhimpur_100_20_0.14928m.tif
+============================================================
+
+  [5a] Reading image: /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/Lakhimpur_Whole_Sat_Data/Lakhimpur/Lakhimpur_100_20_0.14928m.tif
+       Size     : 13531 × 13531 px
+       Bands    : 3
+       CRS      : EPSG:3857
+       Dtype    : uint8
+  [5b] Normalising to [0,1]  (img_as_float scaling)
+  [5c] Padded size: 13824 × 13824  (729 tiles of 512×512)
+  [5d] Running tile inference on device: cuda
+       729 tiles processed.
+  [5e] Reconstructing full prediction map (19 classes)
+  [6]  Saving 19-class prediction → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED19_Lakhimpur_100_20_0.14928m.tif
+
+  [7]  Pixel statistics for: Lakhimpur_100_20_0.14928m.tif
+
+  --- 19-Class Pixel Counts ---
+  Class  Name                         Active        Pixels   Percent
+  -----------------------------------------------------------------
+   0  building                        yes       301,823    0.165%
+   1  pervious surface                yes     2,619,202    1.431%
+   2  impervious surface              yes       191,520    0.105%
+   3  bare soil                       yes    17,113,571    9.347%
+   4  water                           yes   148,839,209   81.294%
+   5  coniferous                      yes           800    0.000%
+   6  deciduous                       yes            48    0.000%
+   7  brushwood                       yes         3,354    0.002%
+   8  vineyard                        yes             0    0.000%
+   9  herbaceous vegetation           yes    13,271,126    7.248%
+  10  agricultural land               yes       717,664    0.392%
+  11  plowed land                     yes        28,726    0.016%
+  12  swimming pool                   yes            15    0.000%
+  13  snow                            yes            42    0.000%
+  14  clear cut                        no             0    0.000%
+  15  mixed                            no             0    0.000%
+  16  ligneous                         no             0    0.000%
+  17  greenhouse                      yes           861    0.000%
+  18  other                            no             0    0.000%
+      TOTAL                                 183,087,961  100.000%
+
+  [8]  Reclassifying 19 classes → 3 classes
+       Mapping:
+          0 building                  → 1 Land
+          1 pervious surface          → 1 Land
+          2 impervious surface        → 1 Land
+          3 bare soil                 → 1 Land
+          4 water                     → 0 Water bodies
+          5 coniferous                → 2 Vegetation
+          6 deciduous                 → 2 Vegetation
+          7 brushwood                 → 2 Vegetation
+          8 vineyard                  → 2 Vegetation
+          9 herbaceous vegetation     → 2 Vegetation
+         10 agricultural land         → 2 Vegetation
+         11 plowed land               → 1 Land
+         12 swimming pool             → 0 Water bodies
+         13 snow                      → 1 Land
+         14 clear cut                 → 2 Vegetation
+         15 mixed                     → 2 Vegetation
+         16 ligneous                  → 2 Vegetation
+         17 greenhouse                → 1 Land
+         18 other                     → 1 Land
+
+  [9]  Saving 3-class prediction  → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED3_Lakhimpur_100_20_0.14928m.tif
+
+  [10] 3-Class statistics for: Lakhimpur_100_20_0.14928m.tif
+
+  --- 3-Class Pixel Counts (after reclassification) ---
+  Class  Name                        Pixels   Percent
+  --------------------------------------------------
+      0  Water bodies           148,839,224   81.294%
+      1  Land                    20,255,745   11.063%
+      2  Vegetation              13,992,992    7.643%
+         TOTAL                  183,087,961  100.000%
+
+============================================================
+STEP 5-10 : Inference  [12/1071]  Lakhimpur_1010_20_0.14928m.tif
+============================================================
+
+  [5a] Reading image: /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/Lakhimpur_Whole_Sat_Data/Lakhimpur/Lakhimpur_1010_20_0.14928m.tif
+       Size     : 13531 × 13531 px
+       Bands    : 3
+       CRS      : EPSG:3857
+       Dtype    : uint8
+  [5b] Normalising to [0,1]  (img_as_float scaling)
+  [5c] Padded size: 13824 × 13824  (729 tiles of 512×512)
+  [5d] Running tile inference on device: cuda
+       729 tiles processed.
+  [5e] Reconstructing full prediction map (19 classes)
+  [6]  Saving 19-class prediction → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED19_Lakhimpur_1010_20_0.14928m.tif
+
+  [7]  Pixel statistics for: Lakhimpur_1010_20_0.14928m.tif
+
+  --- 19-Class Pixel Counts ---
+  Class  Name                         Active        Pixels   Percent
+  -----------------------------------------------------------------
+   0  building                        yes           577    0.000%
+   1  pervious surface                yes     8,089,218    4.418%
+   2  impervious surface              yes           411    0.000%
+   3  bare soil                       yes    62,750,281   34.273%
+   4  water                           yes   102,961,811   56.236%
+   5  coniferous                      yes             0    0.000%
+   6  deciduous                       yes             1    0.000%
+   7  brushwood                       yes         4,929    0.003%
+   8  vineyard                        yes        64,022    0.035%
+   9  herbaceous vegetation           yes     7,202,865    3.934%
+  10  agricultural land               yes     1,457,286    0.796%
+  11  plowed land                     yes       556,560    0.304%
+  12  swimming pool                   yes             0    0.000%
+  13  snow                            yes             0    0.000%
+  14  clear cut                        no             0    0.000%
+  15  mixed                            no             0    0.000%
+  16  ligneous                         no             0    0.000%
+  17  greenhouse                      yes             0    0.000%
+  18  other                            no             0    0.000%
+      TOTAL                                 183,087,961  100.000%
+
+  [8]  Reclassifying 19 classes → 3 classes
+       Mapping:
+          0 building                  → 1 Land
+          1 pervious surface          → 1 Land
+          2 impervious surface        → 1 Land
+          3 bare soil                 → 1 Land
+          4 water                     → 0 Water bodies
+          5 coniferous                → 2 Vegetation
+          6 deciduous                 → 2 Vegetation
+          7 brushwood                 → 2 Vegetation
+          8 vineyard                  → 2 Vegetation
+          9 herbaceous vegetation     → 2 Vegetation
+         10 agricultural land         → 2 Vegetation
+         11 plowed land               → 1 Land
+         12 swimming pool             → 0 Water bodies
+         13 snow                      → 1 Land
+         14 clear cut                 → 2 Vegetation
+         15 mixed                     → 2 Vegetation
+         16 ligneous                  → 2 Vegetation
+         17 greenhouse                → 1 Land
+         18 other                     → 1 Land
+
+  [9]  Saving 3-class prediction  → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED3_Lakhimpur_1010_20_0.14928m.tif
+
+  [10] 3-Class statistics for: Lakhimpur_1010_20_0.14928m.tif
+
+  --- 3-Class Pixel Counts (after reclassification) ---
+  Class  Name                        Pixels   Percent
+  --------------------------------------------------
+      0  Water bodies           102,961,811   56.236%
+      1  Land                    71,397,047   38.996%
+      2  Vegetation               8,729,103    4.768%
+         TOTAL                  183,087,961  100.000%
+
+============================================================
+STEP 5-10 : Inference  [13/1071]  Lakhimpur_1011_20_0.14928m.tif
+============================================================
+
+  [5a] Reading image: /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/Lakhimpur_Whole_Sat_Data/Lakhimpur/Lakhimpur_1011_20_0.14928m.tif
+       Size     : 13531 × 13531 px
+       Bands    : 3
+       CRS      : EPSG:3857
+       Dtype    : uint8
+  [5b] Normalising to [0,1]  (img_as_float scaling)
+  [5c] Padded size: 13824 × 13824  (729 tiles of 512×512)
+  [5d] Running tile inference on device: cuda
+       729 tiles processed.
+  [5e] Reconstructing full prediction map (19 classes)
+  [6]  Saving 19-class prediction → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED19_Lakhimpur_1011_20_0.14928m.tif
+
+  [7]  Pixel statistics for: Lakhimpur_1011_20_0.14928m.tif
+
+  --- 19-Class Pixel Counts ---
+  Class  Name                         Active        Pixels   Percent
+  -----------------------------------------------------------------
+   0  building                        yes         6,232    0.003%
+   1  pervious surface                yes       564,564    0.308%
+   2  impervious surface              yes       111,818    0.061%
+   3  bare soil                       yes    73,077,255   39.914%
+   4  water                           yes   108,069,342   59.026%
+   5  coniferous                      yes             0    0.000%
+   6  deciduous                       yes             0    0.000%
+   7  brushwood                       yes             0    0.000%
+   8  vineyard                        yes             0    0.000%
+   9  herbaceous vegetation           yes        73,816    0.040%
+  10  agricultural land               yes       185,102    0.101%
+  11  plowed land                     yes       982,332    0.537%
+  12  swimming pool                   yes             0    0.000%
+  13  snow                            yes            29    0.000%
+  14  clear cut                        no             0    0.000%
+  15  mixed                            no             0    0.000%
+  16  ligneous                         no             0    0.000%
+  17  greenhouse                      yes        17,471    0.010%
+  18  other                            no             0    0.000%
+      TOTAL                                 183,087,961  100.000%
+
+  [8]  Reclassifying 19 classes → 3 classes
+       Mapping:
+          0 building                  → 1 Land
+          1 pervious surface          → 1 Land
+          2 impervious surface        → 1 Land
+          3 bare soil                 → 1 Land
+          4 water                     → 0 Water bodies
+          5 coniferous                → 2 Vegetation
+          6 deciduous                 → 2 Vegetation
+          7 brushwood                 → 2 Vegetation
+          8 vineyard                  → 2 Vegetation
+          9 herbaceous vegetation     → 2 Vegetation
+         10 agricultural land         → 2 Vegetation
+         11 plowed land               → 1 Land
+         12 swimming pool             → 0 Water bodies
+         13 snow                      → 1 Land
+         14 clear cut                 → 2 Vegetation
+         15 mixed                     → 2 Vegetation
+         16 ligneous                  → 2 Vegetation
+         17 greenhouse                → 1 Land
+         18 other                     → 1 Land
+
+  [9]  Saving 3-class prediction  → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED3_Lakhimpur_1011_20_0.14928m.tif
+
+  [10] 3-Class statistics for: Lakhimpur_1011_20_0.14928m.tif
+
+  --- 3-Class Pixel Counts (after reclassification) ---
+  Class  Name                        Pixels   Percent
+  --------------------------------------------------
+      0  Water bodies           108,069,342   59.026%
+      1  Land                    74,759,701   40.833%
+      2  Vegetation                 258,918    0.141%
+         TOTAL                  183,087,961  100.000%
+
+============================================================
+STEP 5-10 : Inference  [14/1071]  Lakhimpur_1012_20_0.14928m.tif
+============================================================
+
+  [5a] Reading image: /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/Lakhimpur_Whole_Sat_Data/Lakhimpur/Lakhimpur_1012_20_0.14928m.tif
+       Size     : 13531 × 13531 px
+       Bands    : 3
+       CRS      : EPSG:3857
+       Dtype    : uint8
+  [5b] Normalising to [0,1]  (img_as_float scaling)
+  [5c] Padded size: 13824 × 13824  (729 tiles of 512×512)
+  [5d] Running tile inference on device: cuda
+       729 tiles processed.
+  [5e] Reconstructing full prediction map (19 classes)
+  [6]  Saving 19-class prediction → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED19_Lakhimpur_1012_20_0.14928m.tif
+
+  [7]  Pixel statistics for: Lakhimpur_1012_20_0.14928m.tif
+
+  --- 19-Class Pixel Counts ---
+  Class  Name                         Active        Pixels   Percent
+  -----------------------------------------------------------------
+   0  building                        yes             0    0.000%
+   1  pervious surface                yes     1,403,005    0.766%
+   2  impervious surface              yes         3,681    0.002%
+   3  bare soil                       yes    93,267,754   50.942%
+   4  water                           yes    87,435,002   47.756%
+   5  coniferous                      yes             0    0.000%
+   6  deciduous                       yes             0    0.000%
+   7  brushwood                       yes             0    0.000%
+   8  vineyard                        yes             0    0.000%
+   9  herbaceous vegetation           yes         8,261    0.005%
+  10  agricultural land               yes        86,355    0.047%
+  11  plowed land                     yes       883,884    0.483%
+  12  swimming pool                   yes             0    0.000%
+  13  snow                            yes            19    0.000%
+  14  clear cut                        no             0    0.000%
+  15  mixed                            no             0    0.000%
+  16  ligneous                         no             0    0.000%
+  17  greenhouse                      yes             0    0.000%
+  18  other                            no             0    0.000%
+      TOTAL                                 183,087,961  100.000%
+
+  [8]  Reclassifying 19 classes → 3 classes
+       Mapping:
+          0 building                  → 1 Land
+          1 pervious surface          → 1 Land
+          2 impervious surface        → 1 Land
+          3 bare soil                 → 1 Land
+          4 water                     → 0 Water bodies
+          5 coniferous                → 2 Vegetation
+          6 deciduous                 → 2 Vegetation
+          7 brushwood                 → 2 Vegetation
+          8 vineyard                  → 2 Vegetation
+          9 herbaceous vegetation     → 2 Vegetation
+         10 agricultural land         → 2 Vegetation
+         11 plowed land               → 1 Land
+         12 swimming pool             → 0 Water bodies
+         13 snow                      → 1 Land
+         14 clear cut                 → 2 Vegetation
+         15 mixed                     → 2 Vegetation
+         16 ligneous                  → 2 Vegetation
+         17 greenhouse                → 1 Land
+         18 other                     → 1 Land
+
+  [9]  Saving 3-class prediction  → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED3_Lakhimpur_1012_20_0.14928m.tif
+
+  [10] 3-Class statistics for: Lakhimpur_1012_20_0.14928m.tif
+
+  --- 3-Class Pixel Counts (after reclassification) ---
+  Class  Name                        Pixels   Percent
+  --------------------------------------------------
+      0  Water bodies            87,435,002   47.756%
+      1  Land                    95,558,343   52.193%
+      2  Vegetation                  94,616    0.052%
+         TOTAL                  183,087,961  100.000%
+
+============================================================
+STEP 5-10 : Inference  [15/1071]  Lakhimpur_1013_20_0.14928m.tif
+============================================================
+
+  [5a] Reading image: /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/Lakhimpur_Whole_Sat_Data/Lakhimpur/Lakhimpur_1013_20_0.14928m.tif
+       Size     : 13531 × 13531 px
+       Bands    : 3
+       CRS      : EPSG:3857
+       Dtype    : uint8
+  [5b] Normalising to [0,1]  (img_as_float scaling)
+  [5c] Padded size: 13824 × 13824  (729 tiles of 512×512)
+  [5d] Running tile inference on device: cuda
+       729 tiles processed.
+  [5e] Reconstructing full prediction map (19 classes)
+  [6]  Saving 19-class prediction → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED19_Lakhimpur_1013_20_0.14928m.tif
+
+  [7]  Pixel statistics for: Lakhimpur_1013_20_0.14928m.tif
+
+  --- 19-Class Pixel Counts ---
+  Class  Name                         Active        Pixels   Percent
+  -----------------------------------------------------------------
+   0  building                        yes             0    0.000%
+   1  pervious surface                yes       693,510    0.379%
+   2  impervious surface              yes         1,383    0.001%
+   3  bare soil                       yes    86,882,039   47.454%
+   4  water                           yes    94,128,156   51.411%
+   5  coniferous                      yes             0    0.000%
+   6  deciduous                       yes             0    0.000%
+   7  brushwood                       yes             0    0.000%
+   8  vineyard                        yes             0    0.000%
+   9  herbaceous vegetation           yes       737,101    0.403%
+  10  agricultural land               yes        45,480    0.025%
+  11  plowed land                     yes       600,269    0.328%
+  12  swimming pool                   yes             0    0.000%
+  13  snow                            yes            23    0.000%
+  14  clear cut                        no             0    0.000%
+  15  mixed                            no             0    0.000%
+  16  ligneous                         no             0    0.000%
+  17  greenhouse                      yes             0    0.000%
+  18  other                            no             0    0.000%
+      TOTAL                                 183,087,961  100.000%
+
+  [8]  Reclassifying 19 classes → 3 classes
+       Mapping:
+          0 building                  → 1 Land
+          1 pervious surface          → 1 Land
+          2 impervious surface        → 1 Land
+          3 bare soil                 → 1 Land
+          4 water                     → 0 Water bodies
+          5 coniferous                → 2 Vegetation
+          6 deciduous                 → 2 Vegetation
+          7 brushwood                 → 2 Vegetation
+          8 vineyard                  → 2 Vegetation
+          9 herbaceous vegetation     → 2 Vegetation
+         10 agricultural land         → 2 Vegetation
+         11 plowed land               → 1 Land
+         12 swimming pool             → 0 Water bodies
+         13 snow                      → 1 Land
+         14 clear cut                 → 2 Vegetation
+         15 mixed                     → 2 Vegetation
+         16 ligneous                  → 2 Vegetation
+         17 greenhouse                → 1 Land
+         18 other                     → 1 Land
+
+  [9]  Saving 3-class prediction  → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED3_Lakhimpur_1013_20_0.14928m.tif
+
+  [10] 3-Class statistics for: Lakhimpur_1013_20_0.14928m.tif
+
+  --- 3-Class Pixel Counts (after reclassification) ---
+  Class  Name                        Pixels   Percent
+  --------------------------------------------------
+      0  Water bodies            94,128,156   51.411%
+      1  Land                    88,177,224   48.161%
+      2  Vegetation                 782,581    0.427%
+         TOTAL                  183,087,961  100.000%
+
+============================================================
+STEP 5-10 : Inference  [16/1071]  Lakhimpur_1014_20_0.14928m.tif
+============================================================
+
+  [5a] Reading image: /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/Lakhimpur_Whole_Sat_Data/Lakhimpur/Lakhimpur_1014_20_0.14928m.tif
+       Size     : 13531 × 13531 px
+       Bands    : 3
+       CRS      : EPSG:3857
+       Dtype    : uint8
+  [5b] Normalising to [0,1]  (img_as_float scaling)
+  [5c] Padded size: 13824 × 13824  (729 tiles of 512×512)
+  [5d] Running tile inference on device: cuda
+       729 tiles processed.
+  [5e] Reconstructing full prediction map (19 classes)
+  [6]  Saving 19-class prediction → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED19_Lakhimpur_1014_20_0.14928m.tif
+
+  [7]  Pixel statistics for: Lakhimpur_1014_20_0.14928m.tif
+
+  --- 19-Class Pixel Counts ---
+  Class  Name                         Active        Pixels   Percent
+  -----------------------------------------------------------------
+   0  building                        yes         2,109    0.001%
+   1  pervious surface                yes     3,864,617    2.111%
+   2  impervious surface              yes         7,641    0.004%
+   3  bare soil                       yes    56,307,634   30.754%
+   4  water                           yes   122,718,814   67.027%
+   5  coniferous                      yes             0    0.000%
+   6  deciduous                       yes             1    0.000%
+   7  brushwood                       yes             0    0.000%
+   8  vineyard                        yes             0    0.000%
+   9  herbaceous vegetation           yes       176,522    0.096%
+  10  agricultural land               yes           256    0.000%
+  11  plowed land                     yes        10,367    0.006%
+  12  swimming pool                   yes             0    0.000%
+  13  snow                            yes             0    0.000%
+  14  clear cut                        no             0    0.000%
+  15  mixed                            no             0    0.000%
+  16  ligneous                         no             0    0.000%
+  17  greenhouse                      yes             0    0.000%
+  18  other                            no             0    0.000%
+      TOTAL                                 183,087,961  100.000%
+
+  [8]  Reclassifying 19 classes → 3 classes
+       Mapping:
+          0 building                  → 1 Land
+          1 pervious surface          → 1 Land
+          2 impervious surface        → 1 Land
+          3 bare soil                 → 1 Land
+          4 water                     → 0 Water bodies
+          5 coniferous                → 2 Vegetation
+          6 deciduous                 → 2 Vegetation
+          7 brushwood                 → 2 Vegetation
+          8 vineyard                  → 2 Vegetation
+          9 herbaceous vegetation     → 2 Vegetation
+         10 agricultural land         → 2 Vegetation
+         11 plowed land               → 1 Land
+         12 swimming pool             → 0 Water bodies
+         13 snow                      → 1 Land
+         14 clear cut                 → 2 Vegetation
+         15 mixed                     → 2 Vegetation
+         16 ligneous                  → 2 Vegetation
+         17 greenhouse                → 1 Land
+         18 other                     → 1 Land
+
+  [9]  Saving 3-class prediction  → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED3_Lakhimpur_1014_20_0.14928m.tif
+
+  [10] 3-Class statistics for: Lakhimpur_1014_20_0.14928m.tif
+
+  --- 3-Class Pixel Counts (after reclassification) ---
+  Class  Name                        Pixels   Percent
+  --------------------------------------------------
+      0  Water bodies           122,718,814   67.027%
+      1  Land                    60,192,368   32.876%
+      2  Vegetation                 176,779    0.097%
+         TOTAL                  183,087,961  100.000%
+
+============================================================
+STEP 5-10 : Inference  [17/1071]  Lakhimpur_1015_20_0.14928m.tif
+============================================================
+
+  [5a] Reading image: /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/Lakhimpur_Whole_Sat_Data/Lakhimpur/Lakhimpur_1015_20_0.14928m.tif
+       Size     : 13531 × 13531 px
+       Bands    : 3
+       CRS      : EPSG:3857
+       Dtype    : uint8
+  [5b] Normalising to [0,1]  (img_as_float scaling)
+  [5c] Padded size: 13824 × 13824  (729 tiles of 512×512)
+  [5d] Running tile inference on device: cuda
+       729 tiles processed.
+  [5e] Reconstructing full prediction map (19 classes)
+  [6]  Saving 19-class prediction → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED19_Lakhimpur_1015_20_0.14928m.tif
+
+  [7]  Pixel statistics for: Lakhimpur_1015_20_0.14928m.tif
+
+  --- 19-Class Pixel Counts ---
+  Class  Name                         Active        Pixels   Percent
+  -----------------------------------------------------------------
+   0  building                        yes           716    0.000%
+   1  pervious surface                yes     2,329,638    1.272%
+   2  impervious surface              yes        17,668    0.010%
+   3  bare soil                       yes    29,604,134   16.169%
+   4  water                           yes   148,212,559   80.952%
+   5  coniferous                      yes             0    0.000%
+   6  deciduous                       yes             0    0.000%
+   7  brushwood                       yes             0    0.000%
+   8  vineyard                        yes             0    0.000%
+   9  herbaceous vegetation           yes     2,836,702    1.549%
+  10  agricultural land               yes        69,074    0.038%
+  11  plowed land                     yes        17,470    0.010%
+  12  swimming pool                   yes             0    0.000%
+  13  snow                            yes             0    0.000%
+  14  clear cut                        no             0    0.000%
+  15  mixed                            no             0    0.000%
+  16  ligneous                         no             0    0.000%
+  17  greenhouse                      yes             0    0.000%
+  18  other                            no             0    0.000%
+      TOTAL                                 183,087,961  100.000%
+
+  [8]  Reclassifying 19 classes → 3 classes
+       Mapping:
+          0 building                  → 1 Land
+          1 pervious surface          → 1 Land
+          2 impervious surface        → 1 Land
+          3 bare soil                 → 1 Land
+          4 water                     → 0 Water bodies
+          5 coniferous                → 2 Vegetation
+          6 deciduous                 → 2 Vegetation
+          7 brushwood                 → 2 Vegetation
+          8 vineyard                  → 2 Vegetation
+          9 herbaceous vegetation     → 2 Vegetation
+         10 agricultural land         → 2 Vegetation
+         11 plowed land               → 1 Land
+         12 swimming pool             → 0 Water bodies
+         13 snow                      → 1 Land
+         14 clear cut                 → 2 Vegetation
+         15 mixed                     → 2 Vegetation
+         16 ligneous                  → 2 Vegetation
+         17 greenhouse                → 1 Land
+         18 other                     → 1 Land
+
+  [9]  Saving 3-class prediction  → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED3_Lakhimpur_1015_20_0.14928m.tif
+
+  [10] 3-Class statistics for: Lakhimpur_1015_20_0.14928m.tif
+
+  --- 3-Class Pixel Counts (after reclassification) ---
+  Class  Name                        Pixels   Percent
+  --------------------------------------------------
+      0  Water bodies           148,212,559   80.952%
+      1  Land                    31,969,626   17.461%
+      2  Vegetation               2,905,776    1.587%
+         TOTAL                  183,087,961  100.000%
+
+============================================================
+STEP 5-10 : Inference  [18/1071]  Lakhimpur_1016_20_0.14928m.tif
+============================================================
+
+  [5a] Reading image: /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/Lakhimpur_Whole_Sat_Data/Lakhimpur/Lakhimpur_1016_20_0.14928m.tif
+       Size     : 13531 × 13531 px
+       Bands    : 3
+       CRS      : EPSG:3857
+       Dtype    : uint8
+  [5b] Normalising to [0,1]  (img_as_float scaling)
+  [5c] Padded size: 13824 × 13824  (729 tiles of 512×512)
+  [5d] Running tile inference on device: cuda
+       729 tiles processed.
+  [5e] Reconstructing full prediction map (19 classes)
+  [6]  Saving 19-class prediction → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED19_Lakhimpur_1016_20_0.14928m.tif
+
+  [7]  Pixel statistics for: Lakhimpur_1016_20_0.14928m.tif
+
+  --- 19-Class Pixel Counts ---
+  Class  Name                         Active        Pixels   Percent
+  -----------------------------------------------------------------
+   0  building                        yes         8,666    0.005%
+   1  pervious surface                yes       507,065    0.277%
+   2  impervious surface              yes        35,185    0.019%
+   3  bare soil                       yes    16,145,585    8.818%
+   4  water                           yes   164,679,468   89.946%
+   5  coniferous                      yes             0    0.000%
+   6  deciduous                       yes             3    0.000%
+   7  brushwood                       yes             0    0.000%
+   8  vineyard                        yes             0    0.000%
+   9  herbaceous vegetation           yes     1,373,754    0.750%
+  10  agricultural land               yes       187,025    0.102%
+  11  plowed land                     yes       151,210    0.083%
+  12  swimming pool                   yes             0    0.000%
+  13  snow                            yes             0    0.000%
+  14  clear cut                        no             0    0.000%
+  15  mixed                            no             0    0.000%
+  16  ligneous                         no             0    0.000%
+  17  greenhouse                      yes             0    0.000%
+  18  other                            no             0    0.000%
+      TOTAL                                 183,087,961  100.000%
+
+  [8]  Reclassifying 19 classes → 3 classes
+       Mapping:
+          0 building                  → 1 Land
+          1 pervious surface          → 1 Land
+          2 impervious surface        → 1 Land
+          3 bare soil                 → 1 Land
+          4 water                     → 0 Water bodies
+          5 coniferous                → 2 Vegetation
+          6 deciduous                 → 2 Vegetation
+          7 brushwood                 → 2 Vegetation
+          8 vineyard                  → 2 Vegetation
+          9 herbaceous vegetation     → 2 Vegetation
+         10 agricultural land         → 2 Vegetation
+         11 plowed land               → 1 Land
+         12 swimming pool             → 0 Water bodies
+         13 snow                      → 1 Land
+         14 clear cut                 → 2 Vegetation
+         15 mixed                     → 2 Vegetation
+         16 ligneous                  → 2 Vegetation
+         17 greenhouse                → 1 Land
+         18 other                     → 1 Land
+
+  [9]  Saving 3-class prediction  → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED3_Lakhimpur_1016_20_0.14928m.tif
+
+  [10] 3-Class statistics for: Lakhimpur_1016_20_0.14928m.tif
+
+  --- 3-Class Pixel Counts (after reclassification) ---
+  Class  Name                        Pixels   Percent
+  --------------------------------------------------
+      0  Water bodies           164,679,468   89.946%
+      1  Land                    16,847,711    9.202%
+      2  Vegetation               1,560,782    0.852%
+         TOTAL                  183,087,961  100.000%
+
+============================================================
+STEP 5-10 : Inference  [19/1071]  Lakhimpur_1017_20_0.14928m.tif
+============================================================
+
+  [5a] Reading image: /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/Lakhimpur_Whole_Sat_Data/Lakhimpur/Lakhimpur_1017_20_0.14928m.tif
+       Size     : 13531 × 13531 px
+       Bands    : 3
+       CRS      : EPSG:3857
+       Dtype    : uint8
+  [5b] Normalising to [0,1]  (img_as_float scaling)
+  [5c] Padded size: 13824 × 13824  (729 tiles of 512×512)
+  [5d] Running tile inference on device: cuda
+       729 tiles processed.
+  [5e] Reconstructing full prediction map (19 classes)
+  [6]  Saving 19-class prediction → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED19_Lakhimpur_1017_20_0.14928m.tif
+
+  [7]  Pixel statistics for: Lakhimpur_1017_20_0.14928m.tif
+
+  --- 19-Class Pixel Counts ---
+  Class  Name                         Active        Pixels   Percent
+  -----------------------------------------------------------------
+   0  building                        yes        11,850    0.006%
+   1  pervious surface                yes       126,411    0.069%
+   2  impervious surface              yes        11,269    0.006%
+   3  bare soil                       yes     7,898,993    4.314%
+   4  water                           yes   172,604,303   94.274%
+   5  coniferous                      yes             0    0.000%
+   6  deciduous                       yes             0    0.000%
+   7  brushwood                       yes            73    0.000%
+   8  vineyard                        yes             0    0.000%
+   9  herbaceous vegetation           yes     1,835,138    1.002%
+  10  agricultural land               yes       516,249    0.282%
+  11  plowed land                     yes        83,675    0.046%
+  12  swimming pool                   yes             0    0.000%
+  13  snow                            yes             0    0.000%
+  14  clear cut                        no             0    0.000%
+  15  mixed                            no             0    0.000%
+  16  ligneous                         no             0    0.000%
+  17  greenhouse                      yes             0    0.000%
+  18  other                            no             0    0.000%
+      TOTAL                                 183,087,961  100.000%
+
+  [8]  Reclassifying 19 classes → 3 classes
+       Mapping:
+          0 building                  → 1 Land
+          1 pervious surface          → 1 Land
+          2 impervious surface        → 1 Land
+          3 bare soil                 → 1 Land
+          4 water                     → 0 Water bodies
+          5 coniferous                → 2 Vegetation
+          6 deciduous                 → 2 Vegetation
+          7 brushwood                 → 2 Vegetation
+          8 vineyard                  → 2 Vegetation
+          9 herbaceous vegetation     → 2 Vegetation
+         10 agricultural land         → 2 Vegetation
+         11 plowed land               → 1 Land
+         12 swimming pool             → 0 Water bodies
+         13 snow                      → 1 Land
+         14 clear cut                 → 2 Vegetation
+         15 mixed                     → 2 Vegetation
+         16 ligneous                  → 2 Vegetation
+         17 greenhouse                → 1 Land
+         18 other                     → 1 Land
+
+  [9]  Saving 3-class prediction  → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED3_Lakhimpur_1017_20_0.14928m.tif
+
+  [10] 3-Class statistics for: Lakhimpur_1017_20_0.14928m.tif
+
+  --- 3-Class Pixel Counts (after reclassification) ---
+  Class  Name                        Pixels   Percent
+  --------------------------------------------------
+      0  Water bodies           172,604,303   94.274%
+      1  Land                     8,132,198    4.442%
+      2  Vegetation               2,351,460    1.284%
+         TOTAL                  183,087,961  100.000%
+
+============================================================
+STEP 5-10 : Inference  [20/1071]  Lakhimpur_1018_20_0.14928m.tif
+============================================================
+
+  [5a] Reading image: /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/Lakhimpur_Whole_Sat_Data/Lakhimpur/Lakhimpur_1018_20_0.14928m.tif
+       Size     : 13531 × 13531 px
+       Bands    : 3
+       CRS      : EPSG:3857
+       Dtype    : uint8
+  [5b] Normalising to [0,1]  (img_as_float scaling)
+  [5c] Padded size: 13824 × 13824  (729 tiles of 512×512)
+  [5d] Running tile inference on device: cuda
+       729 tiles processed.
+  [5e] Reconstructing full prediction map (19 classes)
+  [6]  Saving 19-class prediction → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED19_Lakhimpur_1018_20_0.14928m.tif
+
+  [7]  Pixel statistics for: Lakhimpur_1018_20_0.14928m.tif
+
+  --- 19-Class Pixel Counts ---
+  Class  Name                         Active        Pixels   Percent
+  -----------------------------------------------------------------
+   0  building                        yes         2,987    0.002%
+   1  pervious surface                yes       253,097    0.138%
+   2  impervious surface              yes         7,017    0.004%
+   3  bare soil                       yes    11,903,878    6.502%
+   4  water                           yes   167,248,035   91.348%
+   5  coniferous                      yes            38    0.000%
+   6  deciduous                       yes           763    0.000%
+   7  brushwood                       yes           513    0.000%
+   8  vineyard                        yes             0    0.000%
+   9  herbaceous vegetation           yes     3,116,284    1.702%
+  10  agricultural land               yes       390,722    0.213%
+  11  plowed land                     yes       164,627    0.090%
+  12  swimming pool                   yes             0    0.000%
+  13  snow                            yes             0    0.000%
+  14  clear cut                        no             0    0.000%
+  15  mixed                            no             0    0.000%
+  16  ligneous                         no             0    0.000%
+  17  greenhouse                      yes             0    0.000%
+  18  other                            no             0    0.000%
+      TOTAL                                 183,087,961  100.000%
+
+  [8]  Reclassifying 19 classes → 3 classes
+       Mapping:
+          0 building                  → 1 Land
+          1 pervious surface          → 1 Land
+          2 impervious surface        → 1 Land
+          3 bare soil                 → 1 Land
+          4 water                     → 0 Water bodies
+          5 coniferous                → 2 Vegetation
+          6 deciduous                 → 2 Vegetation
+          7 brushwood                 → 2 Vegetation
+          8 vineyard                  → 2 Vegetation
+          9 herbaceous vegetation     → 2 Vegetation
+         10 agricultural land         → 2 Vegetation
+         11 plowed land               → 1 Land
+         12 swimming pool             → 0 Water bodies
+         13 snow                      → 1 Land
+         14 clear cut                 → 2 Vegetation
+         15 mixed                     → 2 Vegetation
+         16 ligneous                  → 2 Vegetation
+         17 greenhouse                → 1 Land
+         18 other                     → 1 Land
+
+  [9]  Saving 3-class prediction  → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED3_Lakhimpur_1018_20_0.14928m.tif
+
+  [10] 3-Class statistics for: Lakhimpur_1018_20_0.14928m.tif
+
+  --- 3-Class Pixel Counts (after reclassification) ---
+  Class  Name                        Pixels   Percent
+  --------------------------------------------------
+      0  Water bodies           167,248,035   91.348%
+      1  Land                    12,331,606    6.735%
+      2  Vegetation               3,508,320    1.916%
+         TOTAL                  183,087,961  100.000%
+
+============================================================
+STEP 5-10 : Inference  [21/1071]  Lakhimpur_1019_20_0.14928m.tif
+============================================================
+
+  [5a] Reading image: /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/Lakhimpur_Whole_Sat_Data/Lakhimpur/Lakhimpur_1019_20_0.14928m.tif
+       Size     : 13531 × 13531 px
+       Bands    : 3
+       CRS      : EPSG:3857
+       Dtype    : uint8
+  [5b] Normalising to [0,1]  (img_as_float scaling)
+  [5c] Padded size: 13824 × 13824  (729 tiles of 512×512)
+  [5d] Running tile inference on device: cuda
+       729 tiles processed.
+  [5e] Reconstructing full prediction map (19 classes)
+  [6]  Saving 19-class prediction → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED19_Lakhimpur_1019_20_0.14928m.tif
+
+  [7]  Pixel statistics for: Lakhimpur_1019_20_0.14928m.tif
+
+  --- 19-Class Pixel Counts ---
+  Class  Name                         Active        Pixels   Percent
+  -----------------------------------------------------------------
+   0  building                        yes             0    0.000%
+   1  pervious surface                yes     1,407,210    0.769%
+   2  impervious surface              yes         3,915    0.002%
+   3  bare soil                       yes    16,620,100    9.078%
+   4  water                           yes   159,772,725   87.266%
+   5  coniferous                      yes             0    0.000%
+   6  deciduous                       yes             2    0.000%
+   7  brushwood                       yes             0    0.000%
+   8  vineyard                        yes             0    0.000%
+   9  herbaceous vegetation           yes     2,239,293    1.223%
+  10  agricultural land               yes     2,600,978    1.421%
+  11  plowed land                     yes       443,738    0.242%
+  12  swimming pool                   yes             0    0.000%
+  13  snow                            yes             0    0.000%
+  14  clear cut                        no             0    0.000%
+  15  mixed                            no             0    0.000%
+  16  ligneous                         no             0    0.000%
+  17  greenhouse                      yes             0    0.000%
+  18  other                            no             0    0.000%
+      TOTAL                                 183,087,961  100.000%
+
+  [8]  Reclassifying 19 classes → 3 classes
+       Mapping:
+          0 building                  → 1 Land
+          1 pervious surface          → 1 Land
+          2 impervious surface        → 1 Land
+          3 bare soil                 → 1 Land
+          4 water                     → 0 Water bodies
+          5 coniferous                → 2 Vegetation
+          6 deciduous                 → 2 Vegetation
+          7 brushwood                 → 2 Vegetation
+          8 vineyard                  → 2 Vegetation
+          9 herbaceous vegetation     → 2 Vegetation
+         10 agricultural land         → 2 Vegetation
+         11 plowed land               → 1 Land
+         12 swimming pool             → 0 Water bodies
+         13 snow                      → 1 Land
+         14 clear cut                 → 2 Vegetation
+         15 mixed                     → 2 Vegetation
+         16 ligneous                  → 2 Vegetation
+         17 greenhouse                → 1 Land
+         18 other                     → 1 Land
+
+  [9]  Saving 3-class prediction  → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED3_Lakhimpur_1019_20_0.14928m.tif
+
+  [10] 3-Class statistics for: Lakhimpur_1019_20_0.14928m.tif
+
+  --- 3-Class Pixel Counts (after reclassification) ---
+  Class  Name                        Pixels   Percent
+  --------------------------------------------------
+      0  Water bodies           159,772,725   87.266%
+      1  Land                    18,474,963   10.091%
+      2  Vegetation               4,840,273    2.644%
+         TOTAL                  183,087,961  100.000%
+
+============================================================
+STEP 5-10 : Inference  [22/1071]  Lakhimpur_101_20_0.14928m.tif
+============================================================
+
+  [5a] Reading image: /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/Lakhimpur_Whole_Sat_Data/Lakhimpur/Lakhimpur_101_20_0.14928m.tif
+       Size     : 13531 × 13531 px
+       Bands    : 3
+       CRS      : EPSG:3857
+       Dtype    : uint8
+  [5b] Normalising to [0,1]  (img_as_float scaling)
+  [5c] Padded size: 13824 × 13824  (729 tiles of 512×512)
+  [5d] Running tile inference on device: cuda
+       729 tiles processed.
+  [5e] Reconstructing full prediction map (19 classes)
+  [6]  Saving 19-class prediction → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED19_Lakhimpur_101_20_0.14928m.tif
+
+  [7]  Pixel statistics for: Lakhimpur_101_20_0.14928m.tif
+
+  --- 19-Class Pixel Counts ---
+  Class  Name                         Active        Pixels   Percent
+  -----------------------------------------------------------------
+   0  building                        yes       157,462    0.086%
+   1  pervious surface                yes     6,680,013    3.649%
+   2  impervious surface              yes       111,989    0.061%
+   3  bare soil                       yes    55,274,484   30.190%
+   4  water                           yes    98,138,338   53.602%
+   5  coniferous                      yes           162    0.000%
+   6  deciduous                       yes           360    0.000%
+   7  brushwood                       yes             0    0.000%
+   8  vineyard                        yes             0    0.000%
+   9  herbaceous vegetation           yes    22,583,854   12.335%
+  10  agricultural land               yes       137,999    0.075%
+  11  plowed land                     yes         2,064    0.001%
+  12  swimming pool                   yes           332    0.000%
+  13  snow                            yes           180    0.000%
+  14  clear cut                        no             0    0.000%
+  15  mixed                            no             0    0.000%
+  16  ligneous                         no             0    0.000%
+  17  greenhouse                      yes           724    0.000%
+  18  other                            no             0    0.000%
+      TOTAL                                 183,087,961  100.000%
+
+  [8]  Reclassifying 19 classes → 3 classes
+       Mapping:
+          0 building                  → 1 Land
+          1 pervious surface          → 1 Land
+          2 impervious surface        → 1 Land
+          3 bare soil                 → 1 Land
+          4 water                     → 0 Water bodies
+          5 coniferous                → 2 Vegetation
+          6 deciduous                 → 2 Vegetation
+          7 brushwood                 → 2 Vegetation
+          8 vineyard                  → 2 Vegetation
+          9 herbaceous vegetation     → 2 Vegetation
+         10 agricultural land         → 2 Vegetation
+         11 plowed land               → 1 Land
+         12 swimming pool             → 0 Water bodies
+         13 snow                      → 1 Land
+         14 clear cut                 → 2 Vegetation
+         15 mixed                     → 2 Vegetation
+         16 ligneous                  → 2 Vegetation
+         17 greenhouse                → 1 Land
+         18 other                     → 1 Land
+
+  [9]  Saving 3-class prediction  → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED3_Lakhimpur_101_20_0.14928m.tif
+
+  [10] 3-Class statistics for: Lakhimpur_101_20_0.14928m.tif
+
+  --- 3-Class Pixel Counts (after reclassification) ---
+  Class  Name                        Pixels   Percent
+  --------------------------------------------------
+      0  Water bodies            98,138,670   53.602%
+      1  Land                    62,226,916   33.987%
+      2  Vegetation              22,722,375   12.411%
+         TOTAL                  183,087,961  100.000%
+
+============================================================
+STEP 5-10 : Inference  [23/1071]  Lakhimpur_1020_20_0.14928m.tif
+============================================================
+
+  [5a] Reading image: /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/Lakhimpur_Whole_Sat_Data/Lakhimpur/Lakhimpur_1020_20_0.14928m.tif
+       Size     : 13531 × 13531 px
+       Bands    : 3
+       CRS      : EPSG:3857
+       Dtype    : uint8
+  [5b] Normalising to [0,1]  (img_as_float scaling)
+  [5c] Padded size: 13824 × 13824  (729 tiles of 512×512)
+  [5d] Running tile inference on device: cuda
+       729 tiles processed.
+  [5e] Reconstructing full prediction map (19 classes)
+  [6]  Saving 19-class prediction → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED19_Lakhimpur_1020_20_0.14928m.tif
+
+  [7]  Pixel statistics for: Lakhimpur_1020_20_0.14928m.tif
+
+  --- 19-Class Pixel Counts ---
+  Class  Name                         Active        Pixels   Percent
+  -----------------------------------------------------------------
+   0  building                        yes        16,619    0.009%
+   1  pervious surface                yes    10,735,875    5.864%
+   2  impervious surface              yes        53,528    0.029%
+   3  bare soil                       yes    54,167,080   29.585%
+   4  water                           yes   111,417,985   60.855%
+   5  coniferous                      yes             0    0.000%
+   6  deciduous                       yes             8    0.000%
+   7  brushwood                       yes            72    0.000%
+   8  vineyard                        yes             0    0.000%
+   9  herbaceous vegetation           yes     4,052,513    2.213%
+  10  agricultural land               yes     1,801,094    0.984%
+  11  plowed land                     yes       843,107    0.460%
+  12  swimming pool                   yes            31    0.000%
+  13  snow                            yes            49    0.000%
+  14  clear cut                        no             0    0.000%
+  15  mixed                            no             0    0.000%
+  16  ligneous                         no             0    0.000%
+  17  greenhouse                      yes             0    0.000%
+  18  other                            no             0    0.000%
+      TOTAL                                 183,087,961  100.000%
+
+  [8]  Reclassifying 19 classes → 3 classes
+       Mapping:
+          0 building                  → 1 Land
+          1 pervious surface          → 1 Land
+          2 impervious surface        → 1 Land
+          3 bare soil                 → 1 Land
+          4 water                     → 0 Water bodies
+          5 coniferous                → 2 Vegetation
+          6 deciduous                 → 2 Vegetation
+          7 brushwood                 → 2 Vegetation
+          8 vineyard                  → 2 Vegetation
+          9 herbaceous vegetation     → 2 Vegetation
+         10 agricultural land         → 2 Vegetation
+         11 plowed land               → 1 Land
+         12 swimming pool             → 0 Water bodies
+         13 snow                      → 1 Land
+         14 clear cut                 → 2 Vegetation
+         15 mixed                     → 2 Vegetation
+         16 ligneous                  → 2 Vegetation
+         17 greenhouse                → 1 Land
+         18 other                     → 1 Land
+
+  [9]  Saving 3-class prediction  → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED3_Lakhimpur_1020_20_0.14928m.tif
+
+  [10] 3-Class statistics for: Lakhimpur_1020_20_0.14928m.tif
+
+  --- 3-Class Pixel Counts (after reclassification) ---
+  Class  Name                        Pixels   Percent
+  --------------------------------------------------
+      0  Water bodies           111,418,016   60.855%
+      1  Land                    65,816,258   35.948%
+      2  Vegetation               5,853,687    3.197%
+         TOTAL                  183,087,961  100.000%
+
+============================================================
+STEP 5-10 : Inference  [24/1071]  Lakhimpur_1021_20_0.14928m.tif
+============================================================
+
+  [5a] Reading image: /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/Lakhimpur_Whole_Sat_Data/Lakhimpur/Lakhimpur_1021_20_0.14928m.tif
+       Size     : 13531 × 13531 px
+       Bands    : 3
+       CRS      : EPSG:3857
+       Dtype    : uint8
+  [5b] Normalising to [0,1]  (img_as_float scaling)
+  [5c] Padded size: 13824 × 13824  (729 tiles of 512×512)
+  [5d] Running tile inference on device: cuda
+       729 tiles processed.
+  [5e] Reconstructing full prediction map (19 classes)
+  [6]  Saving 19-class prediction → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED19_Lakhimpur_1021_20_0.14928m.tif
+
+  [7]  Pixel statistics for: Lakhimpur_1021_20_0.14928m.tif
+
+  --- 19-Class Pixel Counts ---
+  Class  Name                         Active        Pixels   Percent
+  -----------------------------------------------------------------
+   0  building                        yes         2,389    0.001%
+   1  pervious surface                yes    14,510,897    7.926%
+   2  impervious surface              yes        48,544    0.027%
+   3  bare soil                       yes    52,084,877   28.448%
+   4  water                           yes   109,085,559   59.581%
+   5  coniferous                      yes             0    0.000%
+   6  deciduous                       yes            68    0.000%
+   7  brushwood                       yes         2,478    0.001%
+   8  vineyard                        yes             0    0.000%
+   9  herbaceous vegetation           yes     4,431,560    2.420%
+  10  agricultural land               yes     1,688,330    0.922%
+  11  plowed land                     yes     1,231,549    0.673%
+  12  swimming pool                   yes           126    0.000%
+  13  snow                            yes             0    0.000%
+  14  clear cut                        no             0    0.000%
+  15  mixed                            no             0    0.000%
+  16  ligneous                         no             0    0.000%
+  17  greenhouse                      yes         1,584    0.001%
+  18  other                            no             0    0.000%
+      TOTAL                                 183,087,961  100.000%
+
+  [8]  Reclassifying 19 classes → 3 classes
+       Mapping:
+          0 building                  → 1 Land
+          1 pervious surface          → 1 Land
+          2 impervious surface        → 1 Land
+          3 bare soil                 → 1 Land
+          4 water                     → 0 Water bodies
+          5 coniferous                → 2 Vegetation
+          6 deciduous                 → 2 Vegetation
+          7 brushwood                 → 2 Vegetation
+          8 vineyard                  → 2 Vegetation
+          9 herbaceous vegetation     → 2 Vegetation
+         10 agricultural land         → 2 Vegetation
+         11 plowed land               → 1 Land
+         12 swimming pool             → 0 Water bodies
+         13 snow                      → 1 Land
+         14 clear cut                 → 2 Vegetation
+         15 mixed                     → 2 Vegetation
+         16 ligneous                  → 2 Vegetation
+         17 greenhouse                → 1 Land
+         18 other                     → 1 Land
+
+  [9]  Saving 3-class prediction  → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED3_Lakhimpur_1021_20_0.14928m.tif
+
+  [10] 3-Class statistics for: Lakhimpur_1021_20_0.14928m.tif
+
+  --- 3-Class Pixel Counts (after reclassification) ---
+  Class  Name                        Pixels   Percent
+  --------------------------------------------------
+      0  Water bodies           109,085,685   59.581%
+      1  Land                    67,879,840   37.075%
+      2  Vegetation               6,122,436    3.344%
+         TOTAL                  183,087,961  100.000%
+
+============================================================
+STEP 5-10 : Inference  [25/1071]  Lakhimpur_1022_20_0.14928m.tif
+============================================================
+
+  [5a] Reading image: /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/Lakhimpur_Whole_Sat_Data/Lakhimpur/Lakhimpur_1022_20_0.14928m.tif
+       Size     : 13531 × 13531 px
+       Bands    : 3
+       CRS      : EPSG:3857
+       Dtype    : uint8
+  [5b] Normalising to [0,1]  (img_as_float scaling)
+  [5c] Padded size: 13824 × 13824  (729 tiles of 512×512)
+  [5d] Running tile inference on device: cuda
+       729 tiles processed.
+  [5e] Reconstructing full prediction map (19 classes)
+  [6]  Saving 19-class prediction → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED19_Lakhimpur_1022_20_0.14928m.tif
+
+  [7]  Pixel statistics for: Lakhimpur_1022_20_0.14928m.tif
+
+  --- 19-Class Pixel Counts ---
+  Class  Name                         Active        Pixels   Percent
+  -----------------------------------------------------------------
+   0  building                        yes        32,890    0.018%
+   1  pervious surface                yes    16,480,933    9.002%
+   2  impervious surface              yes       112,605    0.062%
+   3  bare soil                       yes    43,342,245   23.673%
+   4  water                           yes   117,577,977   64.219%
+   5  coniferous                      yes        16,788    0.009%
+   6  deciduous                       yes         1,849    0.001%
+   7  brushwood                       yes            14    0.000%
+   8  vineyard                        yes             0    0.000%
+   9  herbaceous vegetation           yes     4,037,430    2.205%
+  10  agricultural land               yes     1,079,759    0.590%
+  11  plowed land                     yes       405,075    0.221%
+  12  swimming pool                   yes             0    0.000%
+  13  snow                            yes             0    0.000%
+  14  clear cut                        no             0    0.000%
+  15  mixed                            no             0    0.000%
+  16  ligneous                         no             0    0.000%
+  17  greenhouse                      yes           396    0.000%
+  18  other                            no             0    0.000%
+      TOTAL                                 183,087,961  100.000%
+
+  [8]  Reclassifying 19 classes → 3 classes
+       Mapping:
+          0 building                  → 1 Land
+          1 pervious surface          → 1 Land
+          2 impervious surface        → 1 Land
+          3 bare soil                 → 1 Land
+          4 water                     → 0 Water bodies
+          5 coniferous                → 2 Vegetation
+          6 deciduous                 → 2 Vegetation
+          7 brushwood                 → 2 Vegetation
+          8 vineyard                  → 2 Vegetation
+          9 herbaceous vegetation     → 2 Vegetation
+         10 agricultural land         → 2 Vegetation
+         11 plowed land               → 1 Land
+         12 swimming pool             → 0 Water bodies
+         13 snow                      → 1 Land
+         14 clear cut                 → 2 Vegetation
+         15 mixed                     → 2 Vegetation
+         16 ligneous                  → 2 Vegetation
+         17 greenhouse                → 1 Land
+         18 other                     → 1 Land
+
+  [9]  Saving 3-class prediction  → /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/output/LULC/PRED3_Lakhimpur_1022_20_0.14928m.tif
+
+  [10] 3-Class statistics for: Lakhimpur_1022_20_0.14928m.tif
+
+  --- 3-Class Pixel Counts (after reclassification) ---
+  Class  Name                        Pixels   Percent
+  --------------------------------------------------
+      0  Water bodies           117,577,977   64.219%
+      1  Land                    60,374,144   32.975%
+      2  Vegetation               5,135,840    2.805%
+         TOTAL                  183,087,961  100.000%
+
+============================================================
+STEP 5-10 : Inference  [26/1071]  Lakhimpur_1023_20_0.14928m.tif
+============================================================
+
+  [5a] Reading image: /media/vassarml/HDD/Praneeth/IN/Assam/Lakhimpur/Lakhimpur_Whole_Sat_Data/Lakhimpur/Lakhimpur_1023_20_0.14928m.tif
+       Size     : 13531 × 13531 px
+       Bands    : 3
+       CRS      : EPSG:3857
+       Dtype    : uint8
